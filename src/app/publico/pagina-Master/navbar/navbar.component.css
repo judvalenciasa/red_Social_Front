@@ -1,0 +1,20 @@
+.bg-color
+{
+    background-color: #124154;
+}
+
+.text
+{
+    color: rgb(236, 236, 236);
+    text-decoration: none;
+    display: block;
+    padding: .5rem 1rem;
+    font-family: sans-serif;
+    font-style: bold;
+    font-size: 14px;
+}
+
+.text:hover
+{
+    color: #2C96F8;
+}
