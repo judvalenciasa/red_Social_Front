@@ -1,3 +1,58 @@
-.page-footer{
-    background: #007bff!important;
+.bg-color
+{
+    background: #124154;
+}
+
+.text-1
+{
+    color: rgb(236, 236, 236);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+.text-2
+{
+    color: rgb(236, 236, 236);
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+.div-0
+{
+    background: #389945 !important;
+}
+
+.div-1
+{
+    background: #b0c72b !important;
+}
+
+.div-2
+{
+    background: #802060 !important;
+}
+
+.div-3
+{
+    background: #ad1414 !important;
+}
+
+.img-fluid
+{
+    max-width: 150px;
+    height: auto;
+}
+
+.bt-blanco
+{
+    background: rgb(236, 236, 236);
+
+    color: #124154;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 13px;
 }
