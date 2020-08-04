@@ -30,10 +30,9 @@ export class RegistroComponent implements OnInit {
       cedula: ['',[Validators.required, Validators.minLength(5)]],
       celular: ['',[Validators.required, Validators.minLength(12), Validators.maxLength(14)]],
       correo: ['',[Validators.required, Validators.email]],
-      fecha_Nacimiento: [],
-      foto_Cedula: [],
-      foto_Personal: [],
-      tema_Interes: []
+      fecha_Nacimiento: ['',[Validators.required]],
+      foto_Cedula: ['',[Validators.required]],
+      foto_Personal: ['',[Validators.required]],
 
     });
   }
