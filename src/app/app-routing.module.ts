@@ -15,11 +15,11 @@ const routes: Routes = [
   },
   {
     path:'seguridad',
-    loadChildren:() => import ('src/app/modulos/seguridad/seguridad.module').then(m => m.SeguridadModule)
+    loadChildren:() => import ('./modulos/seguridad/seguridad.module').then(m => m.SeguridadModule)
   },
   {
     path:'usuarios',
-    loadChildren:()=> import('./modulos/usuarios/usuarios-routing.module').then(m => m.UsuariosRoutingModule)
+    loadChildren:() => import ('./modulos/usuarios/usuarios.module').then(m => m.UsuariosModule)
   },
 
 /**
