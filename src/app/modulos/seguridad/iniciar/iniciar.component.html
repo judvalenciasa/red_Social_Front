@@ -11,13 +11,21 @@
             <form class="bg-color col-sm-10">
                 <div class="form-group col-sm-10">
                     <label for="correo" class="text-2">Correo*</label>
-                    <input type="email" class="form-control text-2" id="correo" placeholder="correo@empresa.com">
+                    <input type="email" class="form-control text-2" id="correo" placeholder="correo@empresa.com" required="required">
                 </div>
                 <div class="form-group col-sm-10">
                     <label for="clave" class="text-2">Clave*</label>
-                    <input type="password" class="form-control text-2" id="clave" placeholder="clave">
+                    <input type="password" class="form-control text-2" id="clave" placeholder="clave" required="required">
                 </div>
+
                 <button type="submit" class="bt-azul btn">Iniciar</button>
+
+                <div class="form-group col-sm-10">
+                    <a routerLink="/seguridad/recuperar-clave" class="text-2">¿Olvidó su contraseña?</a>
+                </div>
+                <div class="form-group col-sm-10">
+                    <a routerLink="/usuarios/registro" class="text-2">¿Sin cuenta?, Regístrate</a>
+                </div>
             </form>
         </div>
     </div>
