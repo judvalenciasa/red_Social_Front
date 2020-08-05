@@ -35,11 +35,11 @@ export class RegistroComponent implements OnInit {
       segundo_Apellido: [],
       cedula: ['',[Validators.required]],
       celular: ['',[Validators.required]],
-      correo: ['',[Validators.required, Validators.email]],
+      correo: ['',[Validators.required]],
       fecha_Nacimiento: ['',[Validators.required]],
       foto_Cedula: [],
       foto_Personal: []
-      
+
     });
   }
 
@@ -51,9 +51,20 @@ export class RegistroComponent implements OnInit {
     }
     else 
     {
-      let modelo = this.getUsuariosData(); 
-      this.servicio.registrarUsuario(modelo);
-    } 
+      //alert(JSON.stringify(this.fgValidator.value, null, 4));
+      alert('valido');
+      let modelo = this.getUsuariosData();
+      //console.log(modelo);
+      this.servicio.registrarUsuario(modelo).subscribe(data => {
+        console.log(data);
+        if (data) {
+          alert("registro exitoso")
+        }
+        else {
+          alert("error");
+        }
+      });
+    }
   }
 
   /* Crear una instancia del modelo para ser enviada */
