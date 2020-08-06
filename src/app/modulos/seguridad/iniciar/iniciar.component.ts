@@ -46,7 +46,6 @@ export class IniciarComponent implements OnInit {
     modelo.correo = this.fgv.correo.value;
     modelo.password = MD5(this.fgv.password.value).toString();
    // modelo.password = this.fgv.password.value;
-    
     return modelo;
   }
 
@@ -61,11 +60,11 @@ export class IniciarComponent implements OnInit {
 
       this.servicio.inicioUsuario(modelo).subscribe(data => {
         if (data) {
-          ShowNotificationMessage('registro exitoso');
+          ShowNotificationMessage('ingreso valido');
           this.router.navigate(['/seguridad/iniciar']);
         }
         else {
-          ShowNotificationMessage('Error en el registro');
+          ShowNotificationMessage('Error al ingresar');
         }
       });
     }
