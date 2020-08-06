@@ -7,58 +7,76 @@
       <div class="row">
         <div class="form-group col-sm-6">
           <label for="primer_nombre" class="text-2">Primer Nombre*</label>
-          <input formControlName="primer_Nombre" type="text" class="form-control text-2" id="primer_nombre" placeholder="Primer Nombre" required="required">
+          <input formControlName="primer_Nombre" type="text" class="form-control text-2" id="primer_nombre"
+            placeholder="Primer Nombre" required="required">
+          <div class="invalido"
+            *ngIf="fgv.primer_Nombre.errors && (fgv.primer_Nombre.dirty || fgv.primer_Nombre.touched)">
+            <strong *ngIf="fgv.primer_Nombre.errors.required">
+              El primer nombre es requerido.
+            </strong>
+            <strong *ngIf="fgv.primer_Nombre.errors.minlength">
+              La maxima longitud del nombre es invalida.
+            </strong>
+          </div>
         </div>
-
         <div class="form-group col-sm-6">
           <label for="segundo_nombre" class="text-2">Segundo Nombre</label>
-          <input formControlName="segundo_Nombre" type="text" class="form-control text-2" id="segundo_nombre" placeholder="Segundo Nombre">
+          <input formControlName="segundo_Nombre" type="text" class="form-control text-2" id="segundo_nombre"
+            placeholder="Segundo Nombre">
         </div>
       </div>
 
       <div class="row">
         <div class="form-group col-sm-6">
           <label for="primer_apellido" class="text-2">Primer Apellido*</label>
-          <input formControlName="primer_Apellido" type="text" class="form-control text-2" id="primer_apellido" placeholder="Primer Apellido" required="required">
+          <input formControlName="primer_Apellido" type="text" class="form-control text-2" id="primer_apellido"
+            placeholder="Primer Apellido" required="required">
         </div>
 
         <div class="form-group col-sm-6">
           <label for="segundo_apellido" class="text-2">Segundo Apellido</label>
-          <input formControlName="segundo_Apellido" type="text" class="form-control text-2" id="segundo_apellido" placeholder="Segundo Apellido">
+          <input formControlName="segundo_Apellido" type="text" class="form-control text-2" id="segundo_apellido"
+            placeholder="Segundo Apellido">
         </div>
       </div>
 
       <div class="row">
         <div class="form-group col-sm-3">
           <label for="cedula" class="text-2">Cédula*</label>
-          <input formControlName="cedula" type="text" class="form-control text-2" id="cedula" placeholder="Cédula" required="required">
+          <input formControlName="cedula" type="text" class="form-control text-2" id="cedula" placeholder="Cédula"
+            required="required">
         </div>
 
         <div class="form-group col-sm-2">
           <label for="fecha_nacimiento" class="text-2">Fecha de Nacimiento*</label>
-          <input formControlName="fecha_Nacimiento" type="date" class="form-control text-2" id="fecha_nacimiento" placeholder="Fecha" required="required">
+          <input formControlName="fecha_Nacimiento" type="date" class="form-control text-2" id="fecha_nacimiento"
+            placeholder="Fecha" required="required">
         </div>
 
         <div class="form-group col-sm-3">
           <label for="celular" class="text-2">Celular*</label>
-          <input formControlName="celular" type="text" class="form-control text-2" id="celular" placeholder="Celular" required="required">
+          <input formControlName="celular" type="text" class="form-control text-2" id="celular" placeholder="Celular"
+            required="required">
         </div>
 
         <div class="form-group col-sm-2">
           <label for="foto_cedula" class="text-2">Foto Cédula (.jpg)*</label>
-          <input formControlName="foto_Cedula" type="text" class="form-control text-2" id="foto_cedula" required="required">
+          <input formControlName="foto_Cedula" type="text" class="form-control text-2" id="foto_cedula"
+            required="required">
         </div>
 
         <div class="form-group col-sm-2">
           <label for="foto_personal" class="text-2">Foto Personal (.jpg)*</label>
-          <input formControlName="foto_Personal" type="text" class="form-control text-2" id="foto_personal" required="required">
+          <input formControlName="foto_Personal" type="text" class="form-control text-2" id="foto_personal"
+            required="required">
         </div>
       </div>
 
       <div class="row">
         <div class="form-group col-sm-6">
           <label for="correo" class="text-2">Correo*</label>
-          <input formControlName="correo" type="email" class="form-control text-2" id="correo" placeholder="correo@empresa.com">
+          <input formControlName="correo" type="email" class="form-control text-2" id="correo"
+            placeholder="correo@empresa.com">
         </div>
       </div>
 
