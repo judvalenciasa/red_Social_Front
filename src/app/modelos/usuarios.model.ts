@@ -10,4 +10,5 @@ export class UsuariosModel
     fecha_Nacimiento: String;
     foto_Cedula: String;
     foto_Personal: String;
+    clave:String;
 }
