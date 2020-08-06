@@ -9,15 +9,7 @@
           <label for="primer_nombre" class="text-2">Primer Nombre*</label>
           <input formControlName="primer_Nombre" type="text" class="form-control text-2" id="primer_nombre"
             placeholder="Primer Nombre" required="required">
-          <div class="invalido"
-            *ngIf="fgv.primer_Nombre.errors && (fgv.primer_Nombre.dirty || fgv.primer_Nombre.touched)">
-            <strong *ngIf="fgv.primer_Nombre.errors.required">
-              Primer nombre requerido.
-            </strong>
-            <strong *ngIf="fgv.primer_Nombre.errors.minlength">
-              El tamaño minimo debe ser de 2.
-            </strong>
-          </div>
+          
         </div>
         <div class="form-group col-sm-6">
           <label for="segundo_nombre" class="text-2">Segundo Nombre</label>
