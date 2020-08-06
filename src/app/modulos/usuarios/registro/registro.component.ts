@@ -4,7 +4,12 @@ import { UsuariosModel } from '../../../modelos/usuarios.model';
 import { UsuariosService } from '../../../servicios/usuarios.service'
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 //declare const ShowNotificationMessage: any;
+/**
+ * constante utilizada para los mensajes de validacion
+ */
+declare const ShowNotificationMessage:any;
 
 
 @Component({
@@ -12,6 +17,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css'],
 })
+
+
 export class RegistroComponent implements OnInit {
 
   fgValidator: FormGroup;
@@ -50,7 +57,7 @@ export class RegistroComponent implements OnInit {
   {
     if (this.fgValidator.invalid) 
     {
-      alert('Invalid Form');
+      ShowNotificationMessage('Formulario invalido');
     }
     else 
     {
