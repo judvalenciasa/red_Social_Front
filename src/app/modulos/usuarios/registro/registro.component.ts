@@ -68,11 +68,11 @@ export class RegistroComponent implements OnInit {
       this.servicio.registrarUsuario(modelo).subscribe(data => {
         console.log(data);
         if (data) {
-          alert("registro exitoso");
+          ShowNotificationMessage('registro exitoso');
           this.router.navigate(['/seguridad/iniciar']);
         }
         else {
-          alert("error");
+          ShowNotificationMessage('Error en el registro');
         }
       });
     }
