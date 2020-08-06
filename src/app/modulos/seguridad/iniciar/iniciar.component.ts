@@ -61,7 +61,8 @@ export class IniciarComponent implements OnInit {
       this.servicio.inicioUsuario(modelo).subscribe(data => {
         if (data) {
           ShowNotificationMessage('ingreso valido');
-          this.router.navigate(['/seguridad/iniciar']);
+          this.servicio.guardarSesion(data);
+          this.router.navigate(['/home']);
         }
         else {
           ShowNotificationMessage('Error al ingresar');
