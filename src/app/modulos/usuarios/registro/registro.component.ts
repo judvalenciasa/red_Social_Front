@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuariosModel } from '../../../modelos/usuarios.model';
 import { UsuariosService } from '../../../servicios/usuarios.service'
+import { ActivatedRoute, Router } from '@angular/router';
 
 //declare const ShowNotificationMessage: any;
 
@@ -17,7 +18,9 @@ export class RegistroComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private servicio: UsuariosService
+    private servicio: UsuariosService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
    /*Se ejecuta al inicio del componente*/
@@ -58,7 +61,8 @@ export class RegistroComponent implements OnInit {
       this.servicio.registrarUsuario(modelo).subscribe(data => {
         console.log(data);
         if (data) {
-          alert("registro exitoso")
+          alert("registro exitoso");
+          this.router.navigate(['/seguridad/iniciar']);
         }
         else {
           alert("error");

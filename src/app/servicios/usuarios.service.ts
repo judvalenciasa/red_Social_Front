@@ -18,7 +18,7 @@ export class UsuariosService {
   registrarUsuario(modelo: UsuariosModel): Observable<UsuariosModel> {
     return this.http.post<UsuariosModel>(`${ServiciosConfig.BASE_URL}${this.entidad}`, modelo, {
       headers: new HttpHeaders({
-
+          
       })
     })
   }
