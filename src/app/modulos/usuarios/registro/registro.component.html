@@ -12,10 +12,10 @@
           <div class="invalido"
             *ngIf="fgv.primer_Nombre.errors && (fgv.primer_Nombre.dirty || fgv.primer_Nombre.touched)">
             <strong *ngIf="fgv.primer_Nombre.errors.required">
-              El primer nombre es requerido.
+              Primer nombre requerido.
             </strong>
             <strong *ngIf="fgv.primer_Nombre.errors.minlength">
-              La maxima longitud del nombre es invalida.
+              El tamaño minimo debe ser de 2.
             </strong>
           </div>
         </div>
@@ -31,6 +31,15 @@
           <label for="primer_apellido" class="text-2">Primer Apellido*</label>
           <input formControlName="primer_Apellido" type="text" class="form-control text-2" id="primer_apellido"
             placeholder="Primer Apellido" required="required">
+          <div class="invalido"
+            *ngIf="fgv.primer_Apellido.errors && (fgv.primer_Apellido.dirty || fgv.primer_Apellido.touched)">
+            <strong *ngIf="fgv.primer_Apellido.errors.required">
+              Primer Apellido requerido.
+            </strong>
+            <strong *ngIf="fgv.primer_Apellido.errors.minlength">
+              El tamaño minimo debe ser de 2.
+            </strong>
+          </div>
         </div>
 
         <div class="form-group col-sm-6">
@@ -45,6 +54,14 @@
           <label for="cedula" class="text-2">Cédula*</label>
           <input formControlName="cedula" type="text" class="form-control text-2" id="cedula" placeholder="Cédula"
             required="required">
+          <div class="invalido" *ngIf="fgv.cedula.errors && (fgv.cedula.dirty || fgv.cedula.touched)">
+            <strong *ngIf="fgv.cedula.errors.required">
+              Cedula requerido.
+            </strong>
+            <strong *ngIf="fgv.cedula.errors.minlength">
+              El tamaño minimo debe ser de 7 y maximo 11.
+            </strong>
+          </div>
         </div>
 
         <div class="form-group col-sm-2">
@@ -57,6 +74,14 @@
           <label for="celular" class="text-2">Celular*</label>
           <input formControlName="celular" type="text" class="form-control text-2" id="celular" placeholder="Celular"
             required="required">
+          <div class="invalido" *ngIf="fgv.celular.errors && (fgv.celular.dirty || fgv.celular.touched)">
+            <strong *ngIf="fgv.celular.errors.required">
+              Celular requerido.
+            </strong>
+            <strong *ngIf="fgv.celular.errors.maxlength">
+              El tamaño maximo debe ser de 10 .
+            </strong>
+          </div>
         </div>
 
         <div class="form-group col-sm-2">
@@ -77,6 +102,11 @@
           <label for="correo" class="text-2">Correo*</label>
           <input formControlName="correo" type="email" class="form-control text-2" id="correo"
             placeholder="correo@empresa.com">
+          <div class="invalido" *ngIf="fgv.correo.errors && (fgv.correo.dirty || fgv.correo.touched)">
+            <strong *ngIf="fgv.correo.errors.required">
+              Correo requerido.
+            </strong>
+          </div>
         </div>
       </div>
 

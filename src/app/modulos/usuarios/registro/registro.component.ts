@@ -32,13 +32,13 @@ export class RegistroComponent implements OnInit {
   {
     this.fgValidator = this.fb.group({
 
-      primer_Nombre: ['',[Validators.required]],
+      primer_Nombre: ['',[Validators.required, Validators.minLength(2)]],
       segundo_Nombre: [],
-      primer_Apellido: ['',[Validators.required,]],
+      primer_Apellido: ['',[Validators.required, Validators.minLength(2)]],
       segundo_Apellido: [],
-      cedula: ['',[Validators.required]],
-      celular: ['',[Validators.required]],
-      correo: ['',[Validators.required]],
+      cedula: ['',[Validators.required, Validators.minLength(7), Validators.maxLength(11)]],
+      celular: ['',[Validators.required, Validators.maxLength(10)]],
+      correo: ['',[Validators.required, Validators.email]],
       fecha_Nacimiento: ['',[Validators.required]],
       foto_Cedula: [],
       foto_Personal: []
