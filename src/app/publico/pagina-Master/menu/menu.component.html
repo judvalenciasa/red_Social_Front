@@ -8,28 +8,28 @@
                 </a>
             </li>
             <li>
-                <a *ngIf="rol == 1" routerLink="/parametros/comentario">Comentarios</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/comentario">Admin - Comentarios</a>
             </li>
             <li>
-                <a href="#">Conductores</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/conductor">Admin - Conductores</a>
             </li>
             <li>
-                <a href="#">Denuncias</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/denuncia">Admin - Denuncias</a>
             </li>
             <li>
-                <a href="#">Etiquetas</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/etiqueta">Admin - Etiquetas</a>
             </li>
             <li>
-                <a href="#">Mensajes</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/mensaje">Admin - Mensajes</a>
             </li>
             <li>
-                <a href="#">Publicaciones</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/publicacion">Admin - Publicaciones</a>
             </li>
             <li>
-                <a *ngIf="rol == 1" routerLink="/parametros/usuario">Usuarios</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/usuario">Admin - Usuarios</a>
             </li>
             <li>
-                <a href="#">Viajes</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/viaje">Admin - Viajes</a>
             </li>
         </ul>
     </div>

@@ -28,15 +28,20 @@ import {CrearMensajeComponent} from './mensaje/crear-mensaje/crear-mensaje.compo
 import {EditarMensajeComponent} from './mensaje/editar-mensaje/editar-mensaje.component';
 import {ListarMensajeComponent} from './mensaje/listar-mensaje/listar-mensaje.component';
 
-import {BorrarUsuarioComponent } from './usuario/borrar-usuario/borrar-usuario.component';
-import {CrearUsuarioComponent} from './usuario/crear-usuario/crear-usuario.component';
-import {EditarUsuarioComponent} from './usuario/editar-usuario/editar-usuario.component';
-import {ListarUsuarioComponent} from './usuario/listar-usuario/listar-usuario.component';
+import { ListarPublicacionComponent } from './publicacion/listar-publicacion/listar-publicacion.component';
+import { CrearPublicacionComponent } from './publicacion/crear-publicacion/crear-publicacion.component';
+import { BorrarPublicacionComponent } from './publicacion/borrar-publicacion/borrar-publicacion.component';
+import { EditarPublicacionComponent } from './publicacion/editar-publicacion/editar-publicacion.component';
 
-import {BorrarViajeComponent } from './viaje/borrar-viaje/borrar-viaje.component';
-import {CrearViajeComponent} from './viaje/crear-viaje/crear-viaje.component';
-import {EditarViajeComponent} from './viaje/editar-viaje/editar-viaje.component';
-import {ListaViajeComponent} from './viaje/lista-viaje/lista-viaje.component';
+import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
+import { BorrarUsuarioComponent } from './usuario/borrar-usuario/borrar-usuario.component';
+import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './usuario/editar-usuario/editar-usuario.component';
+
+import { ListarViajeComponent } from './viaje/listar-viaje/listar-viaje.component';
+import { CrearViajeComponent } from './viaje/crear-viaje/crear-viaje.component';
+import { EditarViajeComponent } from './viaje/editar-viaje/editar-viaje.component';
+import { BorrarViajeComponent } from './viaje/borrar-viaje/borrar-viaje.component';
 
 
 @NgModule({
@@ -60,7 +65,19 @@ import {ListaViajeComponent} from './viaje/lista-viaje/lista-viaje.component';
     BorrarMensajeComponent,
     CrearMensajeComponent,
     EditarMensajeComponent,
-    ListarMensajeComponent
+    ListarMensajeComponent,
+    ListarPublicacionComponent,
+    CrearPublicacionComponent,
+    BorrarPublicacionComponent,
+    EditarPublicacionComponent,
+    ListarUsuarioComponent,
+    BorrarUsuarioComponent,
+    CrearUsuarioComponent,
+    EditarUsuarioComponent,
+    ListarViajeComponent,
+    CrearViajeComponent,
+    EditarViajeComponent,
+    BorrarViajeComponent
     
   ],
   imports: [
