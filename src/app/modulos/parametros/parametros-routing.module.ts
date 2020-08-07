@@ -47,7 +47,7 @@ const routes: Routes = [
     component: CrearComentarioComponent
   },
   {
-    path: 'editar-comentario',
+    path: 'editar-comentario/:id',
     component: EditarComentarioComponent
   },
   {
@@ -68,7 +68,7 @@ const routes: Routes = [
     component: CrearConductorComponent
   },
   {
-    path: 'editar-conductor',
+    path: 'editar-conductor/:id',
     component: EditarConductorComponent
   },
   {
@@ -91,7 +91,7 @@ const routes: Routes = [
     component: CrearDenunciaComponent
   },
   {
-    path: 'editar-denuncia',
+    path: 'editar-denuncia/:id',
     component: EditarDenunciaComponent
   },
   {
@@ -113,7 +113,7 @@ const routes: Routes = [
     component: CrearEtiquetaComponent
   },
   {
-    path: 'editar-etiqueta',
+    path: 'editar-etiqueta/:id',
     component: EditarEtiquetaComponent
   },
   {
@@ -135,7 +135,7 @@ const routes: Routes = [
     component: CrearMensajeComponent
   },
   {
-    path: 'editar-mensaje',
+    path: 'editar-mensaje/:id',
     component: EditarMensajeComponent
   },
   {
@@ -157,7 +157,7 @@ const routes: Routes = [
     component: CrearPublicacionComponent
   },
   {
-    path: 'editar-publicacion',
+    path: 'editar-publicacion/:id',
     component: EditarPublicacionComponent
   },
   {
@@ -179,7 +179,7 @@ const routes: Routes = [
     component: CrearUsuarioComponent
   },
   {
-    path: 'editar-usuario',
+    path: 'editar-usuario/:id',
     component: EditarUsuarioComponent
   },
   {
@@ -201,7 +201,7 @@ const routes: Routes = [
     component: CrearViajeComponent
   },
   {
-    path: 'editar-viaje',
+    path: 'editar-viaje/:id',
     component: EditarViajeComponent
   },
   {

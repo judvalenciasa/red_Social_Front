@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../../../servicios/parametros/usuario.service';
 import { UsuarioModel } from '../../../../modelos/parametros/usuario.model';
+import { ServiciosConfig } from '../../../../config/servicios.config';
 
 declare const ShowNotificationMessage: any;
 
@@ -11,6 +12,8 @@ declare const ShowNotificationMessage: any;
 })
 export class ListarUsuarioComponent implements OnInit {
 
+  itemsPorPagina: number = ServiciosConfig.ITEMS_POR_PAGINA; 
+  page: number = 1;
   listaRegistro: UsuarioModel[];
 
   constructor(

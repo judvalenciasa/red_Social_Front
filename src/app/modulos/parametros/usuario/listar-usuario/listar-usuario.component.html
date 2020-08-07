@@ -1,4 +1,4 @@
-<a class="btn btn-success bt-crear" routerLink="/parameters/area-creation" role="button">Nuevo</a>
+<a class="btn btn-success bt-crear" routerLink="../crear-usuario" role="button">Nuevo</a>
 <br />
 <br />
 <table class="table bg-table">
@@ -40,7 +40,7 @@
         </tr>
     </thead>
     <tbody class="texto_2">
-        <tr *ngFor="let r of listaRegistro">
+        <tr *ngFor="let r of listaRegistro | paginate: { itemsPerPage: itemsPorPagina, currentPage: page }">
             <td>
                 {{r.id_Usuario}}
             </td>
@@ -69,11 +69,12 @@
                 {{r.correo}}
             </td>
             <td>
-                <a class="btn btn-warning bt-editar" routerLink="/parameters/area-edition/{{r.id}}" role="button">Editar</a>
+                <a class="btn btn-warning bt-editar" routerLink="../editar-usuario/{{r.id_Usuario}}" role="button">Editar</a>
             </td>
             <td>
-                <button type="button" class="btn btn-danger bt-borrar" (click)="RemoveRecordConfirmation(r.id)">Borrar</button>
+                <button type="button" class="btn btn-danger bt-borrar" (click)="RemoveRecordConfirmation(r.id_Usuario)">Borrar</button>
             </td>
         </tr>
     </tbody>
 </table>
+<pagination-controls (pageChange)="page = $event" class="texto_2" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>

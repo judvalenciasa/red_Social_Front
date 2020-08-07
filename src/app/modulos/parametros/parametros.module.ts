@@ -43,6 +43,7 @@ import { CrearViajeComponent } from './viaje/crear-viaje/crear-viaje.component';
 import { EditarViajeComponent } from './viaje/editar-viaje/editar-viaje.component';
 import { BorrarViajeComponent } from './viaje/borrar-viaje/borrar-viaje.component';
 
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { BorrarViajeComponent } from './viaje/borrar-viaje/borrar-viaje.componen
   ],
   imports: [
     CommonModule,
-    ParametrosRoutingModule
+    ParametrosRoutingModule,
+    NgxPaginationModule
   ]
 })
 export class ParametrosModule { }
