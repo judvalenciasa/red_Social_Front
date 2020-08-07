@@ -3,30 +3,33 @@
     <div *ngIf="isLogged" id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a href="#">
-                    Start Bootstrap
+                <a routerLink="/home">
+                    Red Social - ¿Te Llevo?
                 </a>
             </li>
             <li>
-                <a href="#">Dashboard</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/comentario">Comentarios</a>
             </li>
             <li>
-                <a href="#">Shortcuts</a>
+                <a href="#">Conductores</a>
             </li>
             <li>
-                <a href="#">Overview</a>
+                <a href="#">Denuncias</a>
             </li>
             <li>
-                <a href="#">Events</a>
+                <a href="#">Etiquetas</a>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="#">Mensajes</a>
             </li>
             <li>
-                <a href="#">Services</a>
+                <a href="#">Publicaciones</a>
             </li>
             <li>
-                <a href="#">Contact</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/usuario">Usuarios</a>
+            </li>
+            <li>
+                <a href="#">Viajes</a>
             </li>
         </ul>
     </div>

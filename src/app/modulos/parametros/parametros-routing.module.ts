@@ -16,10 +16,6 @@ import { ListarEtiquetaComponent } from './etiqueta/listar-etiqueta/listar-etiqu
 import { CrearEtiquetaComponent } from './etiqueta/crear-etiqueta/crear-etiqueta.component';
 import { EditarEtiquetaComponent } from './etiqueta/editar-etiqueta/editar-etiqueta.component'; 
 import { BorrarEtiquetaComponent } from './etiqueta/borrar-etiqueta/borrar-etiqueta.component';
-import { ListarPublicacionComponent } from './Publicacion/listar-Publicacion/listar-Publicacion.component';
-import { CrearPublicacionComponent } from './Publicacion/crear-Publicacion/crear-Publicacion.component';
-import { EditarPublicacionComponent } from './Publicacion/editar-Publicacion/editar-Publicacion.component'; 
-import { BorrarPublicacionComponent } from './Publicacion/borrar-Publicacion/borrar-Publicacion.component';
 import { ListarUsuarioComponent } from './Usuario/listar-Usuario/listar-Usuario.component';
 import { CrearUsuarioComponent } from './Usuario/crear-Usuario/crear-Usuario.component';
 import { EditarUsuarioComponent } from './Usuario/editar-Usuario/editar-Usuario.component'; 
@@ -116,28 +112,7 @@ const routes: Routes = [
     path: 'borrar-etiqueta',
     component: BorrarEtiquetaComponent
   },
-
-  /**
-   * enrutamiento de los parametros publicacion
-   * 
-   */
-
-  {
-    path: 'publicacion',
-    component: ListarPublicacionComponent
-  },
-  {
-    path: 'crear-publicacion',
-    component: CrearPublicacionComponent
-  },
-  {
-    path: 'editar-etiqueta',
-    component: EditarPublicacionComponent
-  },
-  {
-    path: 'borrar-etiqueta',
-    component: BorrarPublicacionComponent
-  },
+  
   /**
    * enrutamiento de los parametros usuario
    * 

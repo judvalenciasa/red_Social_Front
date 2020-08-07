@@ -10,6 +10,7 @@ import { SeguridadService } from 'src/app/servicios/seguridad-.service';
 export class NavbarComponent implements OnInit {
 
   isLogged: Boolean = false;
+  rol:String = '0';
 
   suscripcion: Subscription
 
@@ -18,6 +19,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.suscripcion = this.servicio.getdataUsuario().subscribe(data =>{
       this.isLogged = data.isLogged;
+      this.rol = data.rol;
+      //console.log(data);
     });
   }
 

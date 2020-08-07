@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class MenuComponent implements OnInit {
 
   isLogged: Boolean = false;
+  rol:String = '0';
 
   suscripcion: Subscription
 
@@ -19,6 +20,8 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     this.suscripcion = this.servicio.getdataUsuario().subscribe(data =>{
       this.isLogged = data.isLogged;
+      this.rol = data.rol;
+      //console.log(data);
     });
   }
 }

@@ -10,7 +10,7 @@
           <li class="nav-item">
               <a class="text" routerLink="/home">Inicio</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!isLogged">
               <a class="text" routerLink="/home">Conócenos</a>
           </li>
           <li class="nav-item" *ngIf="!isLogged">

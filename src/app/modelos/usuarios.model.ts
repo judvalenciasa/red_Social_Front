@@ -11,4 +11,5 @@ export class UsuariosModel
     foto_Cedula: String;
     foto_Personal: String;
     clave:String;
+    rol:String;
 }

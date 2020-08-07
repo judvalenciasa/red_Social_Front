@@ -53,7 +53,7 @@ export class SeguridadService {
         correo: sessionData.data.correo,
         token: sessionData.token,
         isLogged: true,
-        rol: sessionData.data.rol,
+        rol: sessionData.data.rol
       };
       localStorage.setItem('sesion', JSON.stringify(data));
       this.setdataUsuario(data);
