@@ -3,33 +3,33 @@
     <div *ngIf="isLogged" id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a routerLink="/home">
+                <a routerLink="/home" onclick="toggleSideBar()">
                     Red Social - ¿Te Llevo?
                 </a>
             </li>
             <li>
-                <a *ngIf="rol == 1" routerLink="/parametros/comentario">Admin - Comentarios</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/comentario" onclick="toggleSideBar()">Admin - Comentarios</a>
             </li>
             <li>
-                <a *ngIf="rol == 1" routerLink="/parametros/conductor">Admin - Conductores</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/conductor" onclick="toggleSideBar()">Admin - Conductores</a>
             </li>
             <li>
-                <a *ngIf="rol == 1" routerLink="/parametros/denuncia">Admin - Denuncias</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/denuncia" onclick="toggleSideBar()">Admin - Denuncias</a>
             </li>
             <li>
-                <a *ngIf="rol == 1" routerLink="/parametros/etiqueta">Admin - Etiquetas</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/etiqueta" onclick="toggleSideBar()">Admin - Etiquetas</a>
             </li>
             <li>
-                <a *ngIf="rol == 1" routerLink="/parametros/mensaje">Admin - Mensajes</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/mensaje" onclick="toggleSideBar()">Admin - Mensajes</a>
             </li>
             <li>
-                <a *ngIf="rol == 1" routerLink="/parametros/publicacion">Admin - Publicaciones</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/publicacion" onclick="toggleSideBar()">Admin - Publicaciones</a>
             </li>
             <li>
-                <a *ngIf="rol == 1" routerLink="/parametros/usuario">Admin - Usuarios</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/usuario" onclick="toggleSideBar()">Admin - Usuarios</a>
             </li>
             <li>
-                <a *ngIf="rol == 1" routerLink="/parametros/viaje">Admin - Viajes</a>
+                <a *ngIf="rol == 1" routerLink="/parametros/viaje" onclick="toggleSideBar()">Admin - Viajes</a>
             </li>
         </ul>
     </div>
