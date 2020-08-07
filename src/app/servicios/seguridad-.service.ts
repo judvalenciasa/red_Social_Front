@@ -72,5 +72,13 @@ export class SeguridadService {
     this.setdataUsuario(new inicioModel);
   }
 
+  /**
+  * Return the token string
+  */
+  getToken(): String {
+    let sesionActual = this.getSesion();
+    return JSON.parse(sesionActual).token;
+  }
+
 }
 

@@ -1,1 +1,79 @@
-<p>listar-usuario works!</p>
+<a class="btn btn-success bt-crear" routerLink="/parameters/area-creation" role="button">Nuevo</a>
+<br />
+<br />
+<table class="table bg-table">
+    <thead class="table-dark bg texto_1">
+        <tr>
+            <td>
+                id
+            </td>
+            <td>
+                Cédula
+            </td>
+            <td>
+                Fecha Nac
+            </td>
+            <td>
+                Primer Nom
+            </td>
+            <td>
+                Segundo Nom
+            </td>
+            <td>
+                Primer Ape
+            </td>
+            <td>
+                Segundo Ape
+            </td>
+            <td>
+                Rol
+            </td>
+            <td>
+                Correo
+            </td>
+            <td>
+                Editar
+            </td>
+            <td>
+                Borrar
+            </td>
+        </tr>
+    </thead>
+    <tbody class="texto_2">
+        <tr *ngFor="let r of listaRegistro">
+            <td>
+                {{r.id_Usuario}}
+            </td>
+            <td>
+                {{r.cedula}}
+            </td>
+            <td>
+                {{r.fecha_Nacimiento}}
+            </td>
+            <td>
+                {{r.primer_Nombre}}
+            </td>
+            <td>
+                {{r.segundo_Nombre}}
+            </td>
+            <td>
+                {{r.primer_Apellido}}
+            </td>
+            <td>
+                {{r.segundo_Apellido}}
+            </td>
+            <td>
+                {{r.rol}}
+            </td>
+            <td>
+                {{r.correo}}
+            </td>
+            <td>
+                <a class="btn btn-warning bt-editar" routerLink="/parameters/area-edition/{{r.id}}" role="button">Editar</a>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger bt-borrar" (click)="RemoveRecordConfirmation(r.id)">Borrar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
