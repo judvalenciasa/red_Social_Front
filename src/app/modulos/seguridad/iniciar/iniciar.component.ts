@@ -56,8 +56,6 @@ export class IniciarComponent implements OnInit {
     else {
       //alert(JSON.stringify(this.fgValidator.value, null, 4));
       let modelo = this.getDatosInicio();
-      console.log(modelo);
-
       this.servicio.inicioUsuario(modelo).subscribe(data => {
         if (data) {
           ShowNotificationMessage('ingreso valido');

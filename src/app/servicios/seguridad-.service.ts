@@ -20,6 +20,7 @@ export class SeguridadService {
   verificarSesionActiva(){
     let sesionActual = this.getSesion();
     let dataUsuario = new inicioModel();
+    console.log(sesionActual);
     if (sesionActual){
       dataUsuario = JSON.parse(sesionActual);
       this.setdataUsuario(dataUsuario);
@@ -42,18 +43,18 @@ export class SeguridadService {
     })
   }
 
-  guardarSesion(sessionData: any): Boolean {
+  guardarSesion(datosSeccion: any): Boolean {
     let sesionActual = localStorage.getItem('sesion');
     if (sesionActual) {
-      console.log("Already exist")
+      console.log("Ya existe")
       return false;
     } else {
       let data: inicioModel = {
-        id: sessionData.data.id_Usuario,
-        correo: sessionData.data.correo,
-        token: sessionData.token,
+        id: datosSeccion.data.id_Usuario,
+        correo: datosSeccion.data.correo,
+        token: datosSeccion.token,
         isLogged: true,
-        rol: sessionData.data.rol
+        rol: datosSeccion.data.rol
       };
       localStorage.setItem('sesion', JSON.stringify(data));
       this.setdataUsuario(data);
@@ -61,10 +62,17 @@ export class SeguridadService {
     }
   }
 
+  /**
+  retorna la seccion del inicio
+   */
   getSesion() {
     let sesionActual = localStorage.getItem('sesion');
     //console.log(sesionActual);
     return sesionActual;
+  }
+
+  seccionExistente(): Boolean {
+    return (this.getSesion()) ? true : false;
   }
 
   Cerrar(){
