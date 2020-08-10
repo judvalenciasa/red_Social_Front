@@ -32,6 +32,7 @@ import { ListarViajeComponent } from './viaje/listar-viaje/listar-viaje.componen
 import { CrearViajeComponent } from './viaje/crear-viaje/crear-viaje.component';
 import { EditarViajeComponent } from './viaje/editar-viaje/editar-viaje.component';
 import { BorrarViajeComponent } from './viaje/borrar-viaje/borrar-viaje.component';
+import { AutenticionAdministradorGuard } from "../../guardianes/autenticion-administrador.guard";
 
 const routes: Routes = [
   /**
@@ -206,7 +207,8 @@ const routes: Routes = [
   },
   {
     path: 'borrar-viaje',
-    component: BorrarUsuarioComponent
+    component: BorrarUsuarioComponent,
+    canActivate:[AutenticionAdministradorGuard]
   },
 
 ];

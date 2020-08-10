@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefectoComponent } from './publico/home/defecto/defecto.component';
+import { AutenticionAdministradorGuard } from './guardianes/autenticion-administrador.guard';
 
 const routes: Routes = [
   {
@@ -23,8 +24,10 @@ const routes: Routes = [
   },
   {
     path:'parametros',
-    loadChildren:() => import ('./modulos/parametros/parametros.module').then(m => m.ParametrosModule)
+    loadChildren:() => import ('./modulos/parametros/parametros.module').then(m => m.ParametrosModule),
+    canActivate:[AutenticionAdministradorGuard]
   },
+    
 
 /**
  * Esta opcion siempre debe estar al final, por seguridad

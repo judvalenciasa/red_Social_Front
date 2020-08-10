@@ -2,5 +2,6 @@
     "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,
     "compile-hero.generate-minified-javascript": true,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "vsintellicode.modelDownloadPath": ""
 }
