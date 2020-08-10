@@ -88,7 +88,7 @@ export class RegistroComponent implements OnInit {
     modelo.fecha_Nacimiento = this.fgv.fecha_Nacimiento.value;
     modelo.foto_Cedula = this.fgv.foto_Cedula.value;
     modelo.foto_Personal = this.fgv.foto_Personal.value;
-    modelo.rol = "0"; /*Rol por defecto del usuario*/
+    modelo.rol = "1"; /*Rol por defecto del usuario*/
     return modelo;
   }
 

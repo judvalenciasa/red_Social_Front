@@ -44,7 +44,9 @@ export class ListarUsuarioComponent implements OnInit {
     this.servicio.borrarRegistro(id).subscribe(
       data => {
         ShowNotificationMessage('El registro ha sido eliminado');
-        //this.router.navigate(['parametros/usuario']);
+        /**
+         * Recarga el componente para observar el cambio
+         */
         this.ngOnInit();
       },
       error => {
