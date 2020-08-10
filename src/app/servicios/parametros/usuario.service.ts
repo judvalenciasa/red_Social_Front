@@ -49,7 +49,12 @@ export class UsuarioService {
    * edita un registro dentro de la coleccion
    */
   editarRegistro(record: UsuarioModel): Observable<UsuarioModel> {
-    return this.http.put<UsuarioModel>(`${ServiciosConfig.BASE_URL}${this.entidad}/${record.id}`, record, {
+    /**
+     * Se elmina el id del modelo, para el backend no intente cabiarlo, solucion a error (402)
+     */
+    let id = record.id;
+    delete record["id"];
+    return this.http.put<UsuarioModel>(`${ServiciosConfig.BASE_URL}${this.entidad}/${id}`, record, {
       headers: new HttpHeaders({
         Authorization: `Bearer ${this.token}`
       })

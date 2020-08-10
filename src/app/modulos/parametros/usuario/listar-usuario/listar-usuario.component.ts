@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../../../servicios/parametros/usuario.service';
 import { UsuarioModel } from '../../../../modelos/parametros/usuario.model';
 import { ServiciosConfig } from '../../../../config/servicios.config';
+import { Router } from '@angular/router';
+
 
 declare const ShowNotificationMessage: any;
 
@@ -17,7 +19,8 @@ export class ListarUsuarioComponent implements OnInit {
   listaRegistro: UsuarioModel[];
 
   constructor(
-    private servicio: UsuarioService
+    private servicio: UsuarioService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -35,5 +38,18 @@ export class ListarUsuarioComponent implements OnInit {
         ShowNotificationMessage("Hay un problema con la comunicacion del backend");
       }
     )
+  }
+
+  eliminarRegistro(id) {
+    this.servicio.borrarRegistro(id).subscribe(
+      data => {
+        ShowNotificationMessage('El registro ha sido eliminado');
+        //this.router.navigate(['parametros/usuario']);
+        this.ngOnInit();
+      },
+      error => {
+        ShowNotificationMessage('Error al eliminar el registro.');
+      }
+    );
   }
 }
