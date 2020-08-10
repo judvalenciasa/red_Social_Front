@@ -54,8 +54,6 @@ export class CrearUsuarioComponent implements OnInit {
     }
     else 
     {
-      //alert(JSON.stringify(this.fgValidator.value, null, 4));
-      //alert('valido');
       let modelo = this.getUsuariosData();
       console.log(modelo);
       this.servicio.registrarUsuario(modelo).subscribe(data => {
