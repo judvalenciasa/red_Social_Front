@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router} from '@angular/router';
 import { Observable } from 'rxjs';
 import { SeguridadService } from '../servicios/seguridad-.service';
+import { ServiciosConfig } from '../config/servicios.config';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,6 @@ export class AutenticionUsuarioGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log("se esta ejecuantod el guardian");
     if(this.servicio.seccionExistente()){
       this.router.navigate(["/home"]);
       return false;
@@ -24,5 +24,4 @@ export class AutenticionUsuarioGuard implements CanActivate {
     }
 
   }
-  
 }

@@ -75,6 +75,16 @@ export class SeguridadService {
     return (this.getSesion()) ? true : false;
   }
 
+  devolverRol():Boolean{
+      let sessioActual= this.getSesion();
+      return JSON.parse(sessioActual).rol;
+  }
+
+  esAdmin(rol): Boolean {
+    let sessioActual= this.getSesion();
+    return JSON.parse(sessioActual).rol == rol;
+  }
+
   Cerrar(){
     localStorage.removeItem('sesion');
     this.setdataUsuario(new inicioModel);
