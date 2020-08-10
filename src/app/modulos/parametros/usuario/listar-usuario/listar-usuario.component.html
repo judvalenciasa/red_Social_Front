@@ -72,7 +72,7 @@
                 <a class="btn btn-warning bt-editar" routerLink="../editar-usuario/{{r.id_Usuario}}" role="button">Editar</a>
             </td>
             <td>
-                <button type="button" class="btn btn-danger bt-borrar" (click)="RemoveRecordConfirmation(r.id_Usuario)">Borrar</button>
+                <button type="button" class="btn btn-danger bt-borrar" (click)="eliminarRegistro(r.id_Usuario)">Borrar</button>
             </td>
         </tr>
     </tbody>
