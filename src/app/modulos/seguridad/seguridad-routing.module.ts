@@ -4,11 +4,13 @@ import { IniciarComponent} from './iniciar/iniciar.component';
 import { CerrarComponent } from './cerrar/cerrar.component';
 import { RecuperarClaveComponent} from './recuperar-clave/recuperar-clave.component';
 import { CambiarClaveComponent } from './cambiar-clave/cambiar-clave.component';
+import { AutenticionUsuarioGuard } from '../../guardianes/autenticion-usuario.guard';
 
 const routes: Routes = [
   {
     path:'iniciar',
-    component:IniciarComponent
+    component:IniciarComponent,
+    canActivate: [AutenticionUsuarioGuard]
   },
   {
     path:'cerrar',
