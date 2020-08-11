@@ -10,6 +10,7 @@ const routes: Routes = [
   {
     path: 'iniciar',
     component: IniciarComponent,
+    canActivate: [AutenticadoUsuarioGuard],
   },
   {
     path: 'cerrar',
