@@ -45,7 +45,6 @@ export class IniciarComponent implements OnInit {
     let modelo = new inicioModel();
     modelo.correo = this.fgv.correo.value;
     modelo.password = MD5(this.fgv.password.value).toString();
-   // modelo.password = this.fgv.password.value;
     return modelo;
   }
 
@@ -54,13 +53,13 @@ export class IniciarComponent implements OnInit {
       ShowNotificationMessage('Formulario invalido');
     }
     else {
-      //alert(JSON.stringify(this.fgValidator.value, null, 4));
       let modelo = this.getDatosInicio();
       this.servicio.inicioUsuario(modelo).subscribe(data => {
         if (data) {
           ShowNotificationMessage('ingreso valido');
           this.servicio.guardarSesion(data);
           this.router.navigate(['/home']);
+          console.log(this.servicio.getToken());
         }
         else {
           ShowNotificationMessage('Error al ingresar');

@@ -151,7 +151,8 @@ const routes: Routes = [
 
   {
     path: 'publicacion',
-    component: ListarPublicacionComponent
+    //component: ListarPublicacionComponent
+    component: CrearPublicacionComponent
   },
   {
     path: 'crear-publicacion',

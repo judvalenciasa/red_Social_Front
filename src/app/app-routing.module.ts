@@ -25,7 +25,7 @@ const routes: Routes = [
   {
     path:'parametros',
     loadChildren:() => import ('./modulos/parametros/parametros.module').then(m => m.ParametrosModule),
-    canActivate:[AutenticionAdministradorGuard]
+    //canActivate:[AutenticionAdministradorGuard]
   },
     
 

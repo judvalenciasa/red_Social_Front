@@ -105,8 +105,8 @@
           <div class="form-group col-sm-4">
             <label for="rol" class="text-2">Rol*</label>
             <select formControlName="rol" class="custom-select text-2" id="rol" placeholder="Rol">
-                <option value="0">Normal</option>
-                <option value="1">Admin</option>
+                <option value="1">Normal</option>
+                <option value="2">Admin</option>
             </select>
             <div class="invalido" *ngIf="fgv.rol.errors && (fgv.rol.dirty || fgv.rol.touched)">
               <strong *ngIf="fgv.rol.errors.required">
