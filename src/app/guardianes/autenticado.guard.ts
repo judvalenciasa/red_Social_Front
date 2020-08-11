@@ -12,7 +12,7 @@ import { SeguridadService } from '../servicios/seguridad-.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AutenticadoUsuarioGuard implements CanActivate {
+export class AutenticadoGuard implements CanActivate {
   constructor(private servicio: SeguridadService, private router: Router) {}
 
   canActivate(
@@ -23,6 +23,11 @@ export class AutenticadoUsuarioGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return true;
+    if (this.servicio.seccionExistente()) {
+      this.router.navigate(['/home']);
+      return false;
+    } else {
+      return true;
+    }
   }
 }
