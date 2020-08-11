@@ -8,6 +8,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SeguridadService } from '../servicios/seguridad-.service';
+import { ServiciosConfig } from '../config/servicios.config';
 
 @Injectable({
   providedIn: 'root',
@@ -23,6 +24,15 @@ export class AutenticadoUsuarioGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return true;
+    console.log('guardian para usuario normal ');
+    if (
+      this.servicio.seccionExistente() &&
+      this.servicio.esAdmin(ServiciosConfig.adminUserRol)
+    ) {
+      return true;
+    } else {
+      this.router.navigate(['/seguridad/iniciar']);
+      return false;
+    }
   }
 }

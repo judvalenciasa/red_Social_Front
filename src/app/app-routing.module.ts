@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefectoComponent } from './publico/home/defecto/defecto.component';
+import { AutenticadoAdminGuard } from './guardianes/autenticado-admin.Guard';
 
 const routes: Routes = [
   {
@@ -33,7 +34,7 @@ const routes: Routes = [
       import('./modulos/parametros/parametros.module').then(
         (m) => m.ParametrosModule
       ),
-    //canActivate:[AutenticionAdministradorGuard]
+    canActivate: [AutenticadoAdminGuard],
   },
 
   /**
