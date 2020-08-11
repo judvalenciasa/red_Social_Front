@@ -10,11 +10,11 @@ import { EditarConductorComponent } from './conductor/editar-conductor/editar-co
 import { BorrarConductorComponent } from './conductor/borrar-conductor/borrar-conductor.component';
 import { ListarDenunciaComponent } from './denuncia/listar-denuncia/listar-denuncia.component';
 import { CrearDenunciaComponent } from './denuncia/crear-denuncia/crear-denuncia.component';
-import { EditarDenunciaComponent } from './denuncia/editar-denuncia/editar-denuncia.component'; 
-import { BorrarDenunciaComponent } from './denuncia/borrar-denuncia/borrar-denuncia.component'; 
+import { EditarDenunciaComponent } from './denuncia/editar-denuncia/editar-denuncia.component';
+import { BorrarDenunciaComponent } from './denuncia/borrar-denuncia/borrar-denuncia.component';
 import { ListarEtiquetaComponent } from './etiqueta/listar-etiqueta/listar-etiqueta.component';
 import { CrearEtiquetaComponent } from './etiqueta/crear-etiqueta/crear-etiqueta.component';
-import { EditarEtiquetaComponent } from './etiqueta/editar-etiqueta/editar-etiqueta.component'; 
+import { EditarEtiquetaComponent } from './etiqueta/editar-etiqueta/editar-etiqueta.component';
 import { BorrarEtiquetaComponent } from './etiqueta/borrar-etiqueta/borrar-etiqueta.component';
 import { ListarMensajeComponent } from './mensaje/listar-mensaje/listar-mensaje.component';
 import { CrearMensajeComponent } from './mensaje/crear-mensaje/crear-mensaje.component';
@@ -32,7 +32,6 @@ import { ListarViajeComponent } from './viaje/listar-viaje/listar-viaje.componen
 import { CrearViajeComponent } from './viaje/crear-viaje/crear-viaje.component';
 import { EditarViajeComponent } from './viaje/editar-viaje/editar-viaje.component';
 import { BorrarViajeComponent } from './viaje/borrar-viaje/borrar-viaje.component';
-import { AutenticionAdministradorGuard } from "../../guardianes/autenticion-administrador.guard";
 
 const routes: Routes = [
   /**
@@ -41,180 +40,177 @@ const routes: Routes = [
 
   {
     path: 'comentario',
-    component: ListarComentarioComponent
+    component: ListarComentarioComponent,
   },
   {
     path: 'crear-comentario',
-    component: CrearComentarioComponent
+    component: CrearComentarioComponent,
   },
   {
     path: 'editar-comentario/:id',
-    component: EditarComentarioComponent
+    component: EditarComentarioComponent,
   },
   {
     path: 'borrar-comentario',
-    component: BorrarComentarioComponent
+    component: BorrarComentarioComponent,
   },
 
   /**
-     * Enrutamiento de los parametros del conductor
-     */
+   * Enrutamiento de los parametros del conductor
+   */
 
   {
     path: 'conductor',
-    component: ListarConductorComponent
+    component: ListarConductorComponent,
   },
   {
     path: 'crear-conductor',
-    component: CrearConductorComponent
+    component: CrearConductorComponent,
   },
   {
     path: 'editar-conductor/:id',
-    component: EditarConductorComponent
+    component: EditarConductorComponent,
   },
   {
     path: 'borrar-conductor',
-    component: BorrarConductorComponent
+    component: BorrarConductorComponent,
   },
-
 
   /**
    * enrutamiento de los parametros denuncia
-   * 
+   *
    */
 
   {
     path: 'denuncia',
-    component: ListarDenunciaComponent
+    component: ListarDenunciaComponent,
   },
   {
     path: 'crear-denuncia',
-    component: CrearDenunciaComponent
+    component: CrearDenunciaComponent,
   },
   {
     path: 'editar-denuncia/:id',
-    component: EditarDenunciaComponent
+    component: EditarDenunciaComponent,
   },
   {
     path: 'borrar-denuncia',
-    component: BorrarDenunciaComponent
+    component: BorrarDenunciaComponent,
   },
 
   /**
    * enrutamiento de los parametros etiqueta
-   * 
+   *
    */
 
   {
     path: 'etiqueta',
-    component: ListarEtiquetaComponent
+    component: ListarEtiquetaComponent,
   },
   {
     path: 'crear-etiqueta',
-    component: CrearEtiquetaComponent
+    component: CrearEtiquetaComponent,
   },
   {
     path: 'editar-etiqueta/:id',
-    component: EditarEtiquetaComponent
+    component: EditarEtiquetaComponent,
   },
   {
     path: 'borrar-etiqueta',
-    component: BorrarEtiquetaComponent
+    component: BorrarEtiquetaComponent,
   },
 
   /**
    * enrutamiento de los parametros mensaje
-   * 
+   *
    */
 
   {
     path: 'mensaje',
-    component: ListarMensajeComponent
+    component: ListarMensajeComponent,
   },
   {
     path: 'crear-mensaje',
-    component: CrearMensajeComponent
+    component: CrearMensajeComponent,
   },
   {
     path: 'editar-mensaje/:id',
-    component: EditarMensajeComponent
+    component: EditarMensajeComponent,
   },
   {
     path: 'borrar-mensaje',
-    component: BorrarMensajeComponent
+    component: BorrarMensajeComponent,
   },
 
   /**
    * enrutamiento de los parametros publicacion
-   * 
+   *
    */
 
   {
     path: 'publicacion',
-    component: ListarPublicacionComponent
+    component: ListarPublicacionComponent,
   },
   {
     path: 'crear-publicacion',
-    component: CrearPublicacionComponent
+    component: CrearPublicacionComponent,
   },
   {
     path: 'editar-publicacion/:id',
-    component: EditarPublicacionComponent
+    component: EditarPublicacionComponent,
   },
   {
     path: 'borrar-publicacion',
-    component: BorrarPublicacionComponent
+    component: BorrarPublicacionComponent,
   },
-  
+
   /**
    * enrutamiento de los parametros usuario
-   * 
+   *
    */
 
   {
     path: 'usuario',
-    component: ListarUsuarioComponent
+    component: ListarUsuarioComponent,
   },
   {
     path: 'crear-usuario',
-    component: CrearUsuarioComponent
+    component: CrearUsuarioComponent,
   },
   {
     path: 'editar-usuario/:id',
-    component: EditarUsuarioComponent
+    component: EditarUsuarioComponent,
   },
   {
     path: 'borrar-usuario',
-    component: BorrarUsuarioComponent
+    component: BorrarUsuarioComponent,
   },
 
   /**
    * enrutamiento de los parametros viaje
-   * 
+   *
    */
 
   {
     path: 'viaje',
-    component: ListarViajeComponent
+    component: ListarViajeComponent,
   },
   {
     path: 'crear-viaje',
-    component: CrearViajeComponent
+    component: CrearViajeComponent,
   },
   {
     path: 'editar-viaje/:id',
-    component: EditarViajeComponent
+    component: EditarViajeComponent,
   },
   {
     path: 'borrar-viaje',
     component: BorrarUsuarioComponent,
-    canActivate:[AutenticionAdministradorGuard]
   },
-
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ParametrosRoutingModule { }
+export class ParametrosRoutingModule {}
