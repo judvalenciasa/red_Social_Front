@@ -1,1 +1,68 @@
-<p>listar-publicacion works!</p>
+<a class="btn btn-success bt-crear" routerLink="../crear-publicacion" role="button">Nuevo</a>
+<br />
+<br />
+<table class="table bg-table">
+    <thead class="table-dark bg texto_1">
+        <tr>
+            <td>
+                id
+            </td>
+            <td>
+                Fecha Salida
+            </td>
+            <td>
+                Origen
+            </td>
+            <td>
+                Destino
+            </td>
+            <td>
+                Lugar Salida
+            </td>
+            <td>
+                Precio
+            </td>
+            <td>
+                foto
+            </td>
+            <td>
+                Editar
+            </td>
+            <td>
+                Borrar
+            </td>
+        </tr>
+    </thead>
+    <tbody class="texto_2">
+        <tr *ngFor="let r of listaRegistro | paginate: { itemsPerPage: itemsPorPagina, currentPage: page }">
+            <td>
+                {{r.id_Publicacion}}
+            </td>
+            <td>
+                {{r.fecha}}
+            </td>
+            <td>
+                {{r.origen}}
+            </td>
+            <td>
+                {{r.destino}}
+            </td>
+            <td>
+                {{r.lugar}}
+            </td>
+            <td>
+                {{r.precio}}
+            </td>
+            <td>
+                {{r.foto}}
+            </td>
+            <td>
+                <a class="btn btn-warning bt-editar" routerLink="../editar-publicacion/{{r.id_Publicacion}}" role="button">Editar</a>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger bt-borrar" (click)="eliminarRegistro(r.id_Publicacion)">Borrar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<pagination-controls (pageChange)="page = $event" class="texto_2" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>

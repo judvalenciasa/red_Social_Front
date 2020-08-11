@@ -13,15 +13,15 @@ export class SeguridadService {
 
   constructor(
     private http: HttpClient
-  ) { 
+  ) {
     this.verificarSesionActiva();
   }
 
-  verificarSesionActiva(){
+  verificarSesionActiva() {
     let sesionActual = this.getSesion();
     let dataUsuario = new inicioModel();
     console.log(sesionActual);
-    if (sesionActual){
+    if (sesionActual) {
       dataUsuario = JSON.parse(sesionActual);
       this.setdataUsuario(dataUsuario);
     }
@@ -67,7 +67,6 @@ export class SeguridadService {
    */
   getSesion() {
     let sesionActual = localStorage.getItem('sesion');
-    //console.log(sesionActual);
     return sesionActual;
   }
 
@@ -75,17 +74,17 @@ export class SeguridadService {
     return (this.getSesion()) ? true : false;
   }
 
-  devolverRol():Boolean{
-      let sessioActual= this.getSesion();
-      return JSON.parse(sessioActual).rol;
+  devolverRol(): Boolean {
+    let sessioActual = this.getSesion();
+    return JSON.parse(sessioActual).rol;
   }
 
   esAdmin(rol): Boolean {
-    let sessioActual= this.getSesion();
+    let sessioActual = this.getSesion();
     return JSON.parse(sessioActual).rol == rol;
   }
 
-  Cerrar(){
+  Cerrar() {
     localStorage.removeItem('sesion');
     this.setdataUsuario(new inicioModel);
   }
@@ -96,6 +95,11 @@ export class SeguridadService {
   getToken(): String {
     let sesionActual = this.getSesion();
     return JSON.parse(sesionActual).token;
+  }
+
+  getUserId(): String {
+    let sessioActual = this.getSesion();
+    return JSON.parse(sessioActual).id;
   }
 
 }

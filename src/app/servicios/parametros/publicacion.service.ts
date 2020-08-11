@@ -12,6 +12,7 @@ export class PublicacionService {
 
   entidad: String = 'publicacions';
   token: String;
+  filter: String = '?filter={"include":[{"relation":"usuario"}]}';
 
   constructor(
     private http: HttpClient,
@@ -38,7 +39,7 @@ export class PublicacionService {
    * Almacena un registro nuevo dentro de la coleccion
    */
   guardarRegistroNuevo(record: PublicacionModel): Observable<PublicacionModel> {
-    return this.http.post<PublicacionModel>(`${ServiciosConfig.BASE_URL}${this.entidad}`, record, {
+    return this.http.post<PublicacionModel>(`${ServiciosConfig.BASE_URL}${this.entidad}`, record,{
       headers: new HttpHeaders({
         Authorization: `Bearer ${this.token}`
       })
