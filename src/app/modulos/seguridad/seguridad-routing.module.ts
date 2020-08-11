@@ -17,12 +17,12 @@ const routes: Routes = [
   {
     path: 'cerrar',
     component: CerrarComponent,
-    canActivate: [NoAutenticadoUsuarioGuard],
+    canActivate: [AutenticadoUsuarioGuard],
   },
   {
     path: 'recuperar-clave',
     component: RecuperarClaveComponent,
-    canActivate: [NoAutenticadoUsuarioGuard],
+    canActivate: [AutenticadoGuard],
   },
   {
     path: 'cambiar-clave',
