@@ -24,15 +24,12 @@ export class AutenticadoUsuarioGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    console.log('guardian para usuario normal ');
-    if (
-      this.servicio.seccionExistente() &&
-      this.servicio.esAdmin(ServiciosConfig.adminUserRol)
-    ) {
-      return true;
-    } else {
-      this.router.navigate(['/seguridad/iniciar']);
+    console.log('cerrar sesion ');
+    if (!this.servicio.seccionExistente()) {
+      this.router.navigate(['/home']);
       return false;
+    } else {
+      return true;
     }
   }
 }
