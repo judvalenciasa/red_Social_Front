@@ -66,7 +66,6 @@ export class SeguridadService {
    */
   getSesion() {
     let sesionActual = localStorage.getItem('sesion');
-    //console.log(sesionActual);
     return sesionActual;
   }
 
@@ -95,5 +94,10 @@ export class SeguridadService {
   getToken(): String {
     let sesionActual = this.getSesion();
     return JSON.parse(sesionActual).token;
+  }
+
+  getUserId(): String {
+    let sessioActual = this.getSesion();
+    return JSON.parse(sessioActual).id;
   }
 }

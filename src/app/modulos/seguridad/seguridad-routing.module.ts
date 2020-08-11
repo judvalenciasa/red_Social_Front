@@ -5,6 +5,7 @@ import { CerrarComponent } from './cerrar/cerrar.component';
 import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.component';
 import { CambiarClaveComponent } from './cambiar-clave/cambiar-clave.component';
 import { NoAutenticadoUsuarioGuard } from '../../guardianes/no-autenticado-usuario.guard';
+import { AutenticadoUsuarioGuard } from '../../guardianes/autenticado-usuario.guard';
 
 const routes: Routes = [
   {

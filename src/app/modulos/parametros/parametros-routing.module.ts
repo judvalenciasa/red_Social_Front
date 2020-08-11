@@ -149,8 +149,7 @@ const routes: Routes = [
 
   {
     path: 'publicacion',
-    //component: ListarPublicacionComponent
-    component: CrearPublicacionComponent,
+    component: ListarPublicacionComponent,
   },
   {
     path: 'crear-publicacion',

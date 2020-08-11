@@ -4,6 +4,7 @@ import {
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
+  Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SeguridadService } from '../servicios/seguridad-.service';
@@ -12,6 +13,8 @@ import { SeguridadService } from '../servicios/seguridad-.service';
   providedIn: 'root',
 })
 export class AutenticadoUsuarioGuard implements CanActivate {
+  constructor(private servicio: SeguridadService, private router: Router) {}
+
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -20,10 +23,11 @@ export class AutenticadoUsuarioGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if !(this.servicio.seccionExistente()) {
+    if (this.servicio.seccionExistente()) {
+      this.router.navigate(['/home']);
       return true;
     } else {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/seguridad/cambiar-clave']);
       return false;
     }
   }

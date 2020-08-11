@@ -9,7 +9,15 @@
           <label for="primer_nombre" class="text-2">Primer Nombre*</label>
           <input formControlName="primer_Nombre" type="text" class="form-control text-2" id="primer_nombre"
             placeholder="Primer Nombre" required="required">
-          
+          <div class="warning-validator invalido"
+            *ngIf="fgv.primer_Nombre.errors && (fgv.primer_Nombre.dirty || fgv.primer_Nombre.touched)">
+            <strong *ngIf="fgv.primer_Nombre.errors.required">
+              Primer Nombre requerido.
+            </strong>
+            <strong *ngIf="fgv.primer_Nombre.errors.minlength">
+              El tamaño mínimo debe ser de 2.
+            </strong>
+          </div>
         </div>
         <div class="form-group col-sm-6">
           <label for="segundo_nombre" class="text-2">Segundo Nombre</label>
@@ -23,13 +31,13 @@
           <label for="primer_apellido" class="text-2">Primer Apellido*</label>
           <input formControlName="primer_Apellido" type="text" class="form-control text-2" id="primer_apellido"
             placeholder="Primer Apellido" required="required">
-          <div class="invalido"
+          <div class="warning-validator invalido"
             *ngIf="fgv.primer_Apellido.errors && (fgv.primer_Apellido.dirty || fgv.primer_Apellido.touched)">
             <strong *ngIf="fgv.primer_Apellido.errors.required">
               Primer Apellido requerido.
             </strong>
             <strong *ngIf="fgv.primer_Apellido.errors.minlength">
-              El tamaño minimo debe ser de 2.
+              El tamaño mínimo debe ser de 2.
             </strong>
           </div>
         </div>
@@ -46,27 +54,32 @@
           <label for="cedula" class="text-2">Cédula*</label>
           <input formControlName="cedula" type="text" class="form-control text-2" id="cedula" placeholder="Cédula"
             required="required">
-          <div class="invalido" *ngIf="fgv.cedula.errors && (fgv.cedula.dirty || fgv.cedula.touched)">
+          <div class="warning-validator invalido" *ngIf="fgv.cedula.errors && (fgv.cedula.dirty || fgv.cedula.touched)">
             <strong *ngIf="fgv.cedula.errors.required">
-              Cedula requerido.
+              Cédula requerida.
             </strong>
             <strong *ngIf="fgv.cedula.errors.minlength">
-              El tamaño minimo debe ser de 7 y maximo 11.
+              El tamaño mínimo debe ser de 7 y máximo 11.
             </strong>
           </div>
         </div>
 
         <div class="form-group col-sm-2">
-          <label for="fecha_nacimiento" class="text-2">Fecha de Nacimiento*</label>
-          <input formControlName="fecha_Nacimiento" type="date" class="form-control text-2" id="fecha_nacimiento"
+          <label for="fecha_Nacimiento" class="text-2">Fecha de Nacimiento*</label>
+          <input formControlName="fecha_Nacimiento" type="date" class="form-control text-2" id="fecha_Nacimiento"
             placeholder="Fecha" required="required">
+            <div class="warning-validator invalido" *ngIf="fgv.fecha_Nacimiento.errors && (fgv.fecha_Nacimiento.dirty || fgv.fecha_Nacimiento.touched)">
+              <strong *ngIf="fgv.fecha_Nacimiento.errors.required">
+                Fecha requerida.
+              </strong>
+            </div>
         </div>
 
         <div class="form-group col-sm-3">
           <label for="celular" class="text-2">Celular*</label>
           <input formControlName="celular" type="text" class="form-control text-2" id="celular" placeholder="Celular"
             required="required">
-          <div class="invalido" *ngIf="fgv.celular.errors && (fgv.celular.dirty || fgv.celular.touched)">
+          <div class="warning-validator invalido" *ngIf="fgv.celular.errors && (fgv.celular.dirty || fgv.celular.touched)">
             <strong *ngIf="fgv.celular.errors.required">
               Celular requerido.
             </strong>
@@ -94,7 +107,7 @@
           <label for="correo" class="text-2">Correo*</label>
           <input formControlName="correo" type="email" class="form-control text-2" id="correo"
             placeholder="correo@empresa.com">
-          <div class="invalido" *ngIf="fgv.correo.errors && (fgv.correo.dirty || fgv.correo.touched)">
+          <div class="warning-validator invalido" *ngIf="fgv.correo.errors && (fgv.correo.dirty || fgv.correo.touched)">
             <strong *ngIf="fgv.correo.errors.required">
               Correo requerido.
             </strong>

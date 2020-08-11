@@ -9,7 +9,7 @@
                     <label for="origen" class="text-2">Origen*</label>
                     <input formControlName="origen" type="text" class="form-control text-2" id="origen"
                         placeholder="Origen" required="required">
-                    <div class="invalido" *ngIf="fgv.origen.errors && (fgv.origen.dirty || fgv.origen.touched)">
+                    <div class="warning-validator invalido" *ngIf="fgv.origen.errors && (fgv.origen.dirty || fgv.origen.touched)">
                         <strong *ngIf="fgv.origen.errors.required">
                             Origen requerido.
                         </strong>
@@ -19,6 +19,11 @@
                     <label for="destino" class="text-2">Destino*</label>
                     <input formControlName="destino" type="text" class="form-control text-2" id="destino"
                         placeholder="Destino" required="required">
+                        <div class="warning-validator invalido" *ngIf="fgv.destino.errors && (fgv.destino.dirty || fgv.destino.touched)">
+                            <strong *ngIf="fgv.destino.errors.required">
+                                Destino requerido.
+                            </strong>
+                        </div>
                 </div>
             </div>
 
@@ -27,11 +32,21 @@
                     <label for="lugar" class="text-2">Lugar de Salida*</label>
                     <input formControlName="lugar" type="text" class="form-control text-2" id="lugar"
                         placeholder="Salida" required="required">
+                        <div class="warning-validator invalido" *ngIf="fgv.lugar.errors && (fgv.lugar.dirty || fgv.lugar.touched)">
+                            <strong *ngIf="fgv.lugar.errors.required">
+                                Lugar requerido.
+                            </strong>
+                        </div>
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="fecha" class="text-2">Fecha y hora de Salida*</label>
                     <input formControlName="fecha" type="datetime-local" class="form-control text-2" id="fecha"
                         placeholder="Fecha y Hora" required="required">
+                        <div class="warning-validator invalido" *ngIf="fgv.fecha.errors && (fgv.fecha.dirty || fgv.fecha.touched)">
+                            <strong *ngIf="fgv.fecha.errors.required">
+                                Fecha y hora requerida.
+                            </strong>
+                        </div>
                 </div>
             </div>
 
@@ -40,15 +55,25 @@
                     <label for="precio" class="text-2">Precio(COP)*</label>
                     <input formControlName="precio" type="text" class="form-control text-2" id="precio"
                         placeholder="COP" required="required">
+                        <div class="warning-validator invalido" *ngIf="fgv.precio.errors && (fgv.precio.dirty || fgv.precio.touched)">
+                            <strong *ngIf="fgv.precio.errors.required">
+                                Precio requerido.
+                            </strong>
+                        </div>
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="foto" class="text-2">Foto Publicacion(.jpg)*</label>
                     <input formControlName="foto" type="string" class="form-control text-2" id="foto" placeholder="Foto"
                         required="required">
+                        <div class="warning-validator invalido" *ngIf="fgv.foto.errors && (fgv.foto.dirty || fgv.foto.touched)">
+                            <strong *ngIf="fgv.foto.errors.required">
+                                Foto requerida.
+                            </strong>
+                        </div>
                 </div>
             </div>
 
-            <button type="button" routerLink="../usuario" class="bt-amarillo btn">Cancelar</button>
+            <button type="button" routerLink="../publicacion" class="bt-amarillo btn">Cancelar</button>
             &nbsp;
             <button type="button" (click)="registrarPublicacion()" class="bt-azul btn">Registrar</button>
 

@@ -1,10 +1,11 @@
 export class PublicacionModel
 {
-    id?: String;
+    id: String;
     fecha: String;
     origen: String;
     destino: String;
     lugar: String;
     precio: String;
     foto: String;
+    id_Usuario: String
 }

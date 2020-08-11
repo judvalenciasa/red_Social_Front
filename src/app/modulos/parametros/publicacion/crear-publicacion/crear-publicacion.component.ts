@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PublicacionModel } from '../../../../modelos/parametros/publicacion.model';
 import { PublicacionService } from '../../../../servicios/parametros/publicacion.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SeguridadService } from '../../../../servicios/seguridad-.service';
 
 declare const ShowNotificationMessage: any;
 
@@ -18,6 +19,7 @@ export class CrearPublicacionComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private servicio: PublicacionService,
+    private servicioSeguridad : SeguridadService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -35,7 +37,7 @@ export class CrearPublicacionComponent implements OnInit {
       destino: ['', [Validators.required]],
       lugar: ['', [Validators.required]],
       precio: ['', [Validators.required]],
-      foto: []
+      foto: ['', [Validators.required]]
 
     });
   }
@@ -72,6 +74,7 @@ export class CrearPublicacionComponent implements OnInit {
     modelo.lugar = this.fgv.lugar.value;
     modelo.precio = this.fgv.precio.value;
     modelo.foto = this.fgv.foto.value;
+    modelo.id_Usuario = this.servicioSeguridad.getUserId();
     
     return modelo;
   }
