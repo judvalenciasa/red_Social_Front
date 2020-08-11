@@ -1,45 +1,52 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefectoComponent } from './publico/home/defecto/defecto.component';
-import { AutenticionAdministradorGuard } from './guardianes/autenticion-administrador.guard';
 
 const routes: Routes = [
   {
-    path:'home',
+    path: 'home',
     pathMatch: 'full',
-    component:DefectoComponent
+    component: DefectoComponent,
   },
   {
-    path:'',
+    path: '',
     pathMatch: 'full',
-    redirectTo: '/home'
+    redirectTo: '/home',
   },
   {
-    path:'seguridad',
-    loadChildren:() => import ('./modulos/seguridad/seguridad.module').then(m => m.SeguridadModule)
+    path: 'seguridad',
+    loadChildren: () =>
+      import('./modulos/seguridad/seguridad.module').then(
+        (m) => m.SeguridadModule
+      ),
   },
   {
-    path:'usuarios',
-    loadChildren:() => import ('./modulos/usuarios/usuarios.module').then(m => m.UsuariosModule)
+    path: 'usuarios',
+    loadChildren: () =>
+      import('./modulos/usuarios/usuarios.module').then(
+        (m) => m.UsuariosModule
+      ),
   },
   {
-    path:'parametros',
-    loadChildren:() => import ('./modulos/parametros/parametros.module').then(m => m.ParametrosModule),
+    path: 'parametros',
+    loadChildren: () =>
+      import('./modulos/parametros/parametros.module').then(
+        (m) => m.ParametrosModule
+      ),
     //canActivate:[AutenticionAdministradorGuard]
   },
-    
 
-/**
- * Esta opcion siempre debe estar al final, por seguridad
- */
+  /**
+   * Esta opcion siempre debe estar al final, por seguridad
+   */
   {
-    path:'**',
-    redirectTo:'/home'
-  }
+    path: '**',
+    redirectTo: '/home',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
