@@ -5,23 +5,20 @@ import { ServiciosConfig } from '../config/servicios.config';
 import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SeguridadService {
-
   dataUsuario = new BehaviorSubject<inicioModel>(new inicioModel());
 
-  constructor(
-    private http: HttpClient
-  ) { 
+  constructor(private http: HttpClient) {
     this.verificarSesionActiva();
   }
 
-  verificarSesionActiva(){
+  verificarSesionActiva() {
     let sesionActual = this.getSesion();
     let dataUsuario = new inicioModel();
     console.log(sesionActual);
-    if (sesionActual){
+    if (sesionActual) {
       dataUsuario = JSON.parse(sesionActual);
       this.setdataUsuario(dataUsuario);
     }
@@ -36,17 +33,19 @@ export class SeguridadService {
   }
 
   inicioUsuario(modelo: inicioModel): Observable<inicioModel> {
-    return this.http.post<inicioModel>(`${ServiciosConfig.BASE_URL}login`, modelo, {
-      headers: new HttpHeaders({
-
-      })
-    })
+    return this.http.post<inicioModel>(
+      `${ServiciosConfig.BASE_URL}login`,
+      modelo,
+      {
+        headers: new HttpHeaders({}),
+      }
+    );
   }
 
   guardarSesion(datosSeccion: any): Boolean {
     let sesionActual = localStorage.getItem('sesion');
     if (sesionActual) {
-      console.log("Ya existe")
+      console.log('Ya existe');
       return false;
     } else {
       let data: inicioModel = {
@@ -54,7 +53,7 @@ export class SeguridadService {
         correo: datosSeccion.data.correo,
         token: datosSeccion.token,
         isLogged: true,
-        rol: datosSeccion.data.rol
+        rol: datosSeccion.data.rol,
       };
       localStorage.setItem('sesion', JSON.stringify(data));
       this.setdataUsuario(data);
@@ -72,31 +71,29 @@ export class SeguridadService {
   }
 
   seccionExistente(): Boolean {
-    return (this.getSesion()) ? true : false;
+    return this.getSesion() ? true : false;
   }
 
-  devolverRol():Boolean{
-      let sessioActual= this.getSesion();
-      return JSON.parse(sessioActual).rol;
+  devolverRol(): Boolean {
+    let sessioActual = this.getSesion();
+    return JSON.parse(sessioActual).rol;
   }
 
   esAdmin(rol): Boolean {
-    let sessioActual= this.getSesion();
+    let sessioActual = this.getSesion();
     return JSON.parse(sessioActual).rol == rol;
   }
 
-  Cerrar(){
+  Cerrar() {
     localStorage.removeItem('sesion');
-    this.setdataUsuario(new inicioModel);
+    this.setdataUsuario(new inicioModel());
   }
 
   /**
-  * Return the token string
-  */
+   * Return the token string
+   */
   getToken(): String {
     let sesionActual = this.getSesion();
     return JSON.parse(sesionActual).token;
   }
-
 }
-
