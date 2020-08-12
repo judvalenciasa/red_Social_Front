@@ -1,4 +1,5 @@
+export class recuperarContraseña
 {
   correo: String;
-  metodoEnvio: int;
+  metodoEnvio: number;
 }
