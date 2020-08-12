@@ -112,7 +112,7 @@ export class RegistroComponent implements OnInit {
         ShowNotificationMessage("La imagen se ha subido satisfactoriamente.");
       },
       err => {
-        ShowNotificationMessage("Error subiendo imagen.");
+        ShowNotificationMessage("Error subiendo imagen personal.");
       }
     );
   }
@@ -126,7 +126,7 @@ export class RegistroComponent implements OnInit {
         ShowNotificationMessage("La imagen se ha subido satisfactoriamente.");
       },
       err => {
-        ShowNotificationMessage("Error subiendo imagen.");
+        ShowNotificationMessage("Error subiendo imagen cedula.");
       }
     );
   }
