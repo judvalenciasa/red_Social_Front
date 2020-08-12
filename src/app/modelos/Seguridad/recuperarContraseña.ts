@@ -1,0 +1,4 @@
+{
+  correo: String;
+  metodoEnvio: int;
+}

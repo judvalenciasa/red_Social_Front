@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefectoComponent } from './publico/home/defecto/defecto.component';
+<<<<<<< HEAD
 import { ConocenosComponent } from './publico/pagina-Master/conocenos/conocenos.component';
 import { AutenticadoAdminGuard } from './guardianes/autenticado-admin.guard';
 
+=======
+import { AutenticadoAdminGuard } from './guardianes/autenticado-admin.Guard';
+>>>>>>> 33f6383d98f14d808b80c41b364b534b32d13fe8
 
 const routes: Routes = [
   {
@@ -41,7 +45,11 @@ const routes: Routes = [
       import('./modulos/parametros/parametros.module').then(
         (m) => m.ParametrosModule
       ),
+<<<<<<< HEAD
     //canActivate:[AutenticadoAdminGuard]
+=======
+    canActivate: [AutenticadoAdminGuard],
+>>>>>>> 33f6383d98f14d808b80c41b364b534b32d13fe8
   },
 
   /**

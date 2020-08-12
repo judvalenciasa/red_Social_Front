@@ -8,6 +8,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SeguridadService } from '../servicios/seguridad-.service';
+import { ServiciosConfig } from '../config/servicios.config';
 
 @Injectable({
   providedIn: 'root',
@@ -23,12 +24,12 @@ export class AutenticadoUsuarioGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.servicio.seccionExistente()) {
+    console.log('cerrar sesion ');
+    if (!this.servicio.seccionExistente()) {
       this.router.navigate(['/home']);
-      return true;
-    } else {
-      this.router.navigate(['/seguridad/cambiar-clave']);
       return false;
+    } else {
+      return true;
     }
   }
 }

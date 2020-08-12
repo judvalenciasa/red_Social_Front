@@ -8,12 +8,11 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { SeguridadService } from '../servicios/seguridad-.service';
-import { ServiciosConfig } from '../config/servicios.config';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AutenticadoAdminGuard implements CanActivate {
+export class AutenticadoGuard implements CanActivate {
   constructor(private servicio: SeguridadService, private router: Router) {}
 
   canActivate(
@@ -24,16 +23,11 @@ export class AutenticadoAdminGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    console.log('guardian para administrador ');
-    if (
-      this.servicio.seccionExistente() &&
-      this.servicio.esAdmin(ServiciosConfig.adminUserRol)
-    ) {
-      console.log('es un administrador');
-      return true;
-    } else {
-      this.router.navigate(['/seguridad/iniciar']);
+    if (this.servicio.seccionExistente()) {
+      this.router.navigate(['/home']);
       return false;
+    } else {
+      return true;
     }
   }
 }
