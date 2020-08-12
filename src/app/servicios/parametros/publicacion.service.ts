@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {PublicacionModel} from '../../modelos/parametros/publicacion.model';
+import { PublicacionModel } from '../../modelos/parametros/publicacion.model';
 import { Observable } from 'rxjs';
 import { ServiciosConfig } from '../../config/servicios.config';
 import { SeguridadService } from '../../servicios/seguridad-.service';
+import { UploadFileModel } from 'src/app/modelos/upload/upload.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,14 +18,13 @@ export class PublicacionService {
   constructor(
     private http: HttpClient,
     private seguridadService: SeguridadService) {
-      this.token = seguridadService.getToken();
-     }
+    this.token = seguridadService.getToken();
+  }
 
   /**
    * Obtiene todos los registros
    */
-  obtenerRegistros(): Observable<PublicacionModel[]>
-  {
+  obtenerRegistros(): Observable<PublicacionModel[]> {
     return this.http.get<PublicacionModel[]>(`${ServiciosConfig.BASE_URL}${this.entidad}`);
   }
 
@@ -39,7 +39,7 @@ export class PublicacionService {
    * Almacena un registro nuevo dentro de la coleccion
    */
   guardarRegistroNuevo(record: PublicacionModel): Observable<PublicacionModel> {
-    return this.http.post<PublicacionModel>(`${ServiciosConfig.BASE_URL}${this.entidad}`, record,{
+    return this.http.post<PublicacionModel>(`${ServiciosConfig.BASE_URL}${this.entidad}`, record, {
       headers: new HttpHeaders({
         Authorization: `Bearer ${this.token}`
       })
@@ -69,6 +69,14 @@ export class PublicacionService {
     return this.http.delete<any>(`${ServiciosConfig.BASE_URL}${this.entidad}/${recordId}`, {
       headers: new HttpHeaders({
         Authorization: `Bearer ${this.token}`
+      })
+    });
+  }
+
+  subirImagenPUblicacion(FormData): Observable<UploadFileModel> {
+    return this.http.post<UploadFileModel>(`${ServiciosConfig.BASE_URL}publicationPhoto`, FormData, {
+      headers: new HttpHeaders({
+
       })
     });
   }
