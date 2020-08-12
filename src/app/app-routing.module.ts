@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefectoComponent } from './publico/home/defecto/defecto.component';
+import { ConocenosComponent } from './publico/pagina-Master/conocenos/conocenos.component';
+import { AutenticadoAdminGuard } from './guardianes/autenticado-admin.guard';
+
 
 const routes: Routes = [
   {
@@ -12,6 +15,11 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: '/home',
+  },
+  {
+    path: 'conocenos',
+    pathMatch: 'full',
+    component: ConocenosComponent,
   },
   {
     path: 'seguridad',
@@ -33,7 +41,7 @@ const routes: Routes = [
       import('./modulos/parametros/parametros.module').then(
         (m) => m.ParametrosModule
       ),
-    //canActivate:[AutenticionAdministradorGuard]
+    //canActivate:[AutenticadoAdminGuard]
   },
 
   /**

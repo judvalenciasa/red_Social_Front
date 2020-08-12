@@ -1,7 +1,6 @@
 <div class="container">
     <div class="col-sm-12 alineacion">
         <h2 class="text-1">Nueva Publicación</h2>
-
         <form [formGroup]="fgValidator" class="bg-color col-sm-6 py-3">
 
             <div class="row">
@@ -73,7 +72,7 @@
                 </div>
             </div>
 
-            <button type="button" routerLink="../publicacion" class="bt-amarillo btn">Cancelar</button>
+            <button type="button" (click)="reiniciarCampos()" class="bt-amarillo btn">Cancelar</button>
             &nbsp;
             <button type="button" (click)="registrarPublicacion()" class="bt-azul btn">Publicar</button>
 

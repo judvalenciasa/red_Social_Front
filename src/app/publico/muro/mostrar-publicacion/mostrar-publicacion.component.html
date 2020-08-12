@@ -1,0 +1,30 @@
+<div class=" container col-sm-5 alineacion" *ngFor="let r of listaRegistro">
+    <br>
+    <div class="row bg-color">
+        <!-- Informacion -->
+        <div class="form-group col-sm-6">
+            <br>
+            <label class="text-3">{{r.origen}}&nbsp;-&nbsp;{{r.destino}}</label>
+            <br>
+            <br>
+            <p><label class="text-1">Fecha y Horas : &nbsp;</label>
+                <label class="text-2">{{r.fecha}}</label></p>
+
+            <p><label class="text-1">Salida : &nbsp;</label>
+                <label class="text-2">{{r.lugar}}</label></p>
+
+            <p><label class="text-1">Conductor : &nbsp;</label>
+                <label class="text-2" id="Nombre">{{r.id_Usuario}}</label></p>
+
+            <p><label class="text-1">Precio : &nbsp;</label>
+                <label class="text-2">{{r.precio}} COP</label></p>
+            <br>
+            <button type="button" class="bt-azul btn">Detalles</button>
+        </div>
+        <!-- Foto publicación -->
+        <div class="form-group col-sm-6">
+            <br>
+            <img class="img-fluid" src="assets\imagenes\Manizales.jpg">
+        </div>
+    </div>
+</div>

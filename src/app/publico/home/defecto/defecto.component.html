@@ -1,2 +1,13 @@
+<!--Contenido del home Usuario sin Loggear-->
+<div *ngIf="!isLogged">
+    <h2>No estas loggeado</h2>
+</div>
 
-<h2>contenido del home</h2>
+
+<!--Contenido del home Usuario Loggeado-->
+<div *ngIf="isLogged">
+        <app-nueva-publicacion>
+        </app-nueva-publicacion>
+        <app-mostrar-publicacion>
+        </app-mostrar-publicacion>
+</div>

@@ -50,13 +50,13 @@ export class IniciarComponent implements OnInit {
 
   inicioUsuario() {
     if (this.fgValidator.invalid) {
-      ShowNotificationMessage('Formulario invalido');
+      ShowNotificationMessage('Formulario Inválido');
     }
     else {
       let modelo = this.getDatosInicio();
       this.servicio.inicioUsuario(modelo).subscribe(data => {
         if (data) {
-          ShowNotificationMessage('ingreso valido');
+          ShowNotificationMessage('Ingreso Válido | Bienvenid@');
           this.servicio.guardarSesion(data);
           this.router.navigate(['/home']);
           console.log(this.servicio.getToken());

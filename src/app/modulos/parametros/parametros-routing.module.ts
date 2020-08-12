@@ -205,7 +205,7 @@ const routes: Routes = [
   },
   {
     path: 'borrar-viaje',
-    component: BorrarUsuarioComponent,
+    component: BorrarViajeComponent,
   },
 ];
 

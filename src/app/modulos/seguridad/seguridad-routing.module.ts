@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: 'iniciar',
     component: IniciarComponent,
-    canActivate: [AutenticadoUsuarioGuard],
+    //canActivate: [AutenticadoUsuarioGuard],
   },
   {
     path: 'cerrar',
@@ -24,7 +24,7 @@ const routes: Routes = [
   {
     path: 'cambiar-clave',
     component: CambiarClaveComponent,
-    canActivate: [NoAutenticadoUsuarioGuard],
+    //canActivate: [NoAutenticadoUsuarioGuard],
   },
 ];
 

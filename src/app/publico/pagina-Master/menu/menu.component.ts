@@ -21,7 +21,6 @@ export class MenuComponent implements OnInit {
     this.suscripcion = this.servicio.getdataUsuario().subscribe(data =>{
       this.isLogged = data.isLogged;
       this.rol = data.rol;
-      //console.log(data);
     });
   }
 }

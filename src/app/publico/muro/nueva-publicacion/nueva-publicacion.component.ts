@@ -1,28 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PublicacionModel } from '../../../../modelos/parametros/publicacion.model';
-import { PublicacionService } from '../../../../servicios/parametros/publicacion.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { SeguridadService } from '../../../../servicios/seguridad-.service';
+import { PublicacionService } from 'src/app/servicios/parametros/publicacion.service';
+import { SeguridadService } from 'src/app/servicios/seguridad-.service';
+import { PublicacionModel } from 'src/app/modelos/parametros/publicacion.model';
 
 declare const ShowNotificationMessage: any;
 
-@Component({
-  selector: 'app-crear-publicacion',
-  templateUrl: './crear-publicacion.component.html',
-  styleUrls: ['./crear-publicacion.component.css']
-})
-export class CrearPublicacionComponent implements OnInit {
 
-  fgValidator: FormGroup; 
+@Component({
+  selector: 'app-nueva-publicacion',
+  templateUrl: './nueva-publicacion.component.html',
+  styleUrls: ['./nueva-publicacion.component.css']
+})
+export class NuevaPublicacionComponent implements OnInit {
+
+  fgValidator: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private servicio: PublicacionService,
     private servicioSeguridad : SeguridadService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {}
+  ) { }
 
    /*Se ejecuta al inicio del componente*/
    ngOnInit(): void {
@@ -55,7 +53,7 @@ export class CrearPublicacionComponent implements OnInit {
       this.servicio.guardarRegistroNuevo(modelo).subscribe(data => {
         if (data) {
           ShowNotificationMessage('registro exitoso');
-          this.router.navigate(['parametros/publicacion']);
+          this.reiniciarCampos();
         }
         else {
           ShowNotificationMessage('Error en el registro');
@@ -83,4 +81,10 @@ export class CrearPublicacionComponent implements OnInit {
   {
     return this.fgValidator.controls;
   }
+
+  reiniciarCampos()
+  {
+    this.ngOnInit();
+  }
 } 
+
