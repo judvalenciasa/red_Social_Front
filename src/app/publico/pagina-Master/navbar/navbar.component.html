@@ -28,8 +28,11 @@
               <a class="text" routerLink="/seguridad/cerrar">Cerrar Sesión</a>
           </li>
           <li class="nav-item" *ngIf="isLogged">
-              <a class="text" routerLink="/seguridad/cambiar-clave" onclick="toggleSideBar()">Cambiar clave</a>
+              <a class="text" routerLink="/seguridad/cambiar-clave" onclick="toggleSideBar()">Cambiar Clave</a>
           </li>
+          <li class="nav-item" *ngIf="isLogged">
+            <a class="text" routerLink="/seguridad/recuperar-clave" onclick="toggleSideBar()">Recuperar Clave</a>
+        </li>
       </ul>
   </div>
 </nav>
