@@ -133,14 +133,14 @@ export class RegistroComponent implements OnInit {
 
   onProfilePhotoSelect(event) {
     if (event.target.files.length > 0) {
-      const f = event.target.files(0);
+      const f = event.target.files[0];
       this.fgUpload.foto_Personal.setValue(f);
     }
   }
 
   onCedulaPhotoSelect(event) {
     if (event.target.files.length > 0) {
-      const f = event.target.files(0);
+      const f = event.target.files[0];
       this.fgUpload.foto_Cedula.setValue(f);
     }
   }
