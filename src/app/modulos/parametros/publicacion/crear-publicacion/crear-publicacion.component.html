@@ -1,7 +1,7 @@
 <div class="container">
     <div class="col-sm-12 alineacion">
         <h2 class="text-1">Nueva Publicación</h2>
-
+<!--
         <form [formGroup]="uploadForm">
             <div class="form-group col-sm-6">
                 <label for="foto" class="text-2">Foto Publicacion(.jpg)*</label>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-        </form>
+        </form> -->
 
         <form [formGroup]="fgValidator" class="bg-color col-sm-6 py-3">
             <input type="hidden" class="form-control" formControlName="imagenPublicacion" />
@@ -83,6 +83,16 @@
                             Precio requerido.
                         </strong>
                     </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="foto" class="text-2">Foto Publicacion(.jpg)*</label>
+                    <input formControlName="foto" type="string" class="form-control text-2" id="foto" placeholder="Foto"
+                        required="required">
+                        <div class="warning-validator invalido" *ngIf="fgv.foto.errors && (fgv.foto.dirty || fgv.foto.touched)">
+                            <strong *ngIf="fgv.foto.errors.required">
+                                Foto requerida.
+                            </strong>
+                        </div>
                 </div>
             </div>
 
