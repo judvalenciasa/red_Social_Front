@@ -13,12 +13,10 @@
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="claveNueva" class="text-2">Clave Nueva*</label>
-                    <input formControlName="claveNueva" type="password" class="form-control text-2" id="claveNueva"
+                    <input formControlName="claveNueva" type="password" class="form-control text-2" id="claveNueva" placeholder="Clave Nueva"
                         required="required">
-
                 </div>
             </div>
-
             <button type="button" routerLink="../../../publico/home" class="bt-amarillo btn">Cancelar</button>
             &nbsp;
             <button type="button" (click)="cambiarClave()" class="bt-azul btn">Cambiar</button>
