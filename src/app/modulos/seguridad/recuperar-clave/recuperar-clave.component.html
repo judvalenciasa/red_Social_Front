@@ -4,36 +4,28 @@
 
         <!--[formGroup]="fgValidator" falta poner esto y organizar el ts-->
 
-        <form class="bg-color col-sm-6 py-3">
+        <form [formGroup]="fgValidator" class="bg-color col-sm-6 py-3">
 
             <div class="row">
                 <div class="form-group col-sm-6">
                     <label for="correo" class="text-2">Correo*</label>
                     <input formControlName="correo" type="text" class="form-control text-2" id="correo"
                         placeholder="Correo" required="required">
-                    <div class="warning-validator invalido"
-                        *ngIf="fgv.correo.errors && (fgv.correo.dirty || fgv.correo.touched)">
-                        <strong *ngIf="fgv.correo.errors.required">
-                            Correo requerido.
-                        </strong>
-                    </div>
+                    
                 </div>
                 <div class="form-group col-sm-6">
-                    <label for="metodoEnvio" class="text-2">Método Envío*</label>
-                    <input formControlName="metodoEnvio" type="text" class="form-control text-2" id="metodoEnvio"
+                    <label for="type" class="text-2">Método Envío*</label>
+                    <select class="selectpicker" formControlName="type" id="type" class="form-control text-2"
                         placeholder="Método Envio" required="required">
-                    <div class="warning-validator invalido"
-                        *ngIf="fgv.metodoEnvio.errors && (fgv.metodoEnvio.dirty || fgv.metodoEnvio.touched)">
-                        <strong *ngIf="fgv.metodoEnvio.errors.required">
-                            Método requerido.
-                        </strong>
-                    </div>
+                        <option selected value="1">SMS</option>
+                        <option value="2">Mail</option>
+                    </select>
                 </div>
             </div>
 
             <button type="button" routerLink="../../../publico/home" class="bt-amarillo btn">Cancelar</button>
             &nbsp;
-            <button type="button" class="bt-azul btn">Enviar</button>
+            <button type="button" (click)="recuperarClave()" class="bt-azul btn">Enviar</button>
         </form>
     </div>
 </div>

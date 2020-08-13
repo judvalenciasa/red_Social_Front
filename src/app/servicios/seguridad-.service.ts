@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inicioModel } from '../modelos/iniciar.model';
 import { ServiciosConfig } from '../config/servicios.config';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { recuperarContraseña } from '../modelos/seguridad/recuperarContraseña';
 
 @Injectable({
   providedIn: 'root',
@@ -81,6 +82,14 @@ export class SeguridadService {
   esAdmin(rol): Boolean {
     let sessioActual = this.getSesion();
     return JSON.parse(sessioActual).rol == rol;
+  }
+
+  
+  recuperarClave(model: recuperarContraseña): Observable<Boolean> {
+    return this.http.post<Boolean>(`${ServiciosConfig.BASE_URL}password-reset`, model, {
+      headers: new HttpHeaders({
+      })
+    })
   }
 
   Cerrar() {
