@@ -4,6 +4,7 @@ import { inicioModel } from '../modelos/iniciar.model';
 import { ServiciosConfig } from '../config/servicios.config';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { recuperarContraseña } from '../modelos/seguridad/recuperarContraseña';
+import { cambiarClave } from '../modelos/seguridad/cambiarClave.modelo';
 
 @Injectable({
   providedIn: 'root',
@@ -108,5 +109,13 @@ export class SeguridadService {
   getUserId(): String {
     let sessioActual = this.getSesion();
     return JSON.parse(sessioActual).id;
+  }
+
+  cambiarClave(model: cambiarClave): Observable<Boolean>{
+    return this.http.post<Boolean>(`${ServiciosConfig.BASE_URL}change-password`, model, {
+      /*headers: new HttpHeaders({
+        Authorization: `Bearer ${this.getToken()}`
+      })*/
+    })
   }
 }

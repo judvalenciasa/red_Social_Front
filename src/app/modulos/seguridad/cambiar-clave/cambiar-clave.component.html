@@ -2,38 +2,26 @@
     <div class="col-sm-12 alineacion">
         <h2 class="text-1">Cambiar Clave</h2>
 
-        <!--[formGroup]="fgValidator" falta poner esto y organizar el ts-->
-
-        <form class="bg-color col-sm-6 py-3">
+        <form [formGroup]="fgValidator" class="bg-color col-sm-6 py-3">
 
             <div class="row">
                 <div class="form-group col-sm-6">
                     <label for="claveAnterior" class="text-2">Clave Anterior*</label>
-                    <input formControlName="claveAnterior" type="password" class="form-control text-2" id="claveAnterior"
-                        placeholder="Clave Anterior" required="required">
-                    <div class="warning-validator invalido"
-                        *ngIf="fgv.claveAnterior.errors && (fgv.claveAnterior.dirty || fgv.claveAnterior.touched)">
-                        <strong *ngIf="fgv.claveAnterior.errors.required">
-                            Clave anterior requerida.
-                        </strong>
-                    </div>
+                    <input formControlName="claveAnterior" type="password" class="form-control text-2"
+                        id="claveAnterior" placeholder="Clave Anterior" required="required">
+
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="claveNueva" class="text-2">Clave Nueva*</label>
                     <input formControlName="claveNueva" type="password" class="form-control text-2" id="claveNueva"
-                        placeholder="Clave Nueva" required="required">
-                    <div class="warning-validator invalido"
-                        *ngIf="fgv.claveNueva.errors && (fgv.claveNueva.dirty || fgv.claveNueva.touched)">
-                        <strong *ngIf="fgv.claveNueva.errors.required">
-                            Clave nueva requerida.
-                        </strong>
-                    </div>
+                        required="required">
+
                 </div>
             </div>
 
             <button type="button" routerLink="../../../publico/home" class="bt-amarillo btn">Cancelar</button>
             &nbsp;
-            <button type="button" class="bt-azul btn">Cambiar</button>
+            <button type="button" (click)="cambiarClave()" class="bt-azul btn">Cambiar</button>
         </form>
     </div>
 </div>
