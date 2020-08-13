@@ -7,10 +7,9 @@
         <div class="form-group col-sm-6">
           <label for="foto_cedula" class="text-2">Foto Cédula (.jpg)*</label>
           <div class="input-group">
-            <input formControlName="foto_Cedula" (change)="onProfilePhotoSelect($event)" name="image"
+            <input formControlName="foto_Cedula" (change)="onProfilePhotoSelect($event)" name="imagenCedula"
               class="form-control text-1" type="file">
-            <input type="button" class="form-control text-1" value="Subir" (click)="subirImagenCedula()"
-              id="foto_cedula" />
+            <input type="button" class="form-control text-1" value="Subir" (click)="subirImagenCedula()" />
           </div>
           <div class="warning-validator invalido" *ngIf="fgv.imagenCedula.errors">
             <strong *ngIf="fgv.imagenCedula.errors.required">
@@ -22,10 +21,9 @@
         <div class="form-group col-sm-6">
           <label for="foto_personal" class="text-2">Foto Personal (.jpg)*</label>
           <div class="input-group">
-            <input formControlName="foto_Personal" (change)="onCedulaPhotoSelect($event)" name="image"
+            <input formControlName="foto_Personal" (change)="onCedulaPhotoSelect($event)" name="imagenPersonal"
               class="form-control text-1" type="file">
-            <input type="button" class="form-control text-1" value="Subir" (click)="subirImagenPersonal()"
-              id="foto_personal" />
+            <input type="button" class="form-control text-1" value="Subir" (click)="subirImagenPersonal()" />
           </div>
           <div class="warning-validator invalido" *ngIf="fgv.imagenPersonal.errors">
             <strong *ngIf="fgv.imagenPersonal.errors.required">
@@ -37,8 +35,8 @@
     </form>
 
     <form [formGroup]="fgValidator" class="bg-color col-sm-10">
-      <input type="hidden" class="form-control" formControlName="imagenCedula" />
-      <input type="hidden" class="form-control" formControlName="imagenPersonal" />
+      <input type="text" class="form-control" formControlName="imagenCedula" />
+      <input type="text" class="form-control" formControlName="imagenPersonal" />
 
       <div class="row">
         <div class="form-group col-sm-6">
