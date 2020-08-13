@@ -22,7 +22,7 @@ const routes: Routes = [
   {
     path: 'recuperar-clave',
     component: RecuperarClaveComponent,
-    canActivate: [NoAutenticadoUsuarioGuard],
+    canActivate: [AutenticadoGuard],
   },
   {
     path: 'cambiar-clave',
