@@ -32,6 +32,7 @@ export class RecuperarClaveComponent implements OnInit {
   recuperarClave() {
     if (this.fgValidator.invalid) {
       ShowNotificationMessage('Formulario invalido');
+
     } else {
       let model = this.obtenerReseteoClave();
       this.service.recuperarClave(model).subscribe(
@@ -51,7 +52,7 @@ export class RecuperarClaveComponent implements OnInit {
    */
   obtenerReseteoClave(): recuperarContraseña {
     let model = new recuperarContraseña();
-    model.correo = this.fgv.username.value;
+    model.correo = this.fgv.correo.value;
     model.type = parseInt(this.fgv.type.value);
     console.log(model);
     return model;
