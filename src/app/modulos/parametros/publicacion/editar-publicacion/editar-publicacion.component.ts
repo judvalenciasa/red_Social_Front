@@ -103,4 +103,7 @@ export class EditarPublicacionComponent implements OnInit {
   {
     return this.fgValidator.controls;
   }
+
+  
+
 } 

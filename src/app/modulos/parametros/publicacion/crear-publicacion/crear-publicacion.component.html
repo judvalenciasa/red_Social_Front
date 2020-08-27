@@ -1,23 +1,6 @@
 <div class="container">
     <div class="col-sm-12 alineacion">
         <h2 class="text-1">Nueva Publicación</h2>
-<!--
-        <form [formGroup]="uploadForm">
-            <div class="form-group col-sm-6">
-                <label for="foto" class="text-2">Foto Publicacion(.jpg)*</label>
-                <div class="input-group">
-                    <input formControlName="foto" (change)="onPublicacionPhoto($event)" name="foto" type="file"
-                        class="form-control text-2" />
-                    <input type="button" class="form-control text-1" value="Subir" (click)="subirImagenPublicacion()"
-                        id="foto" />
-                    <div class="warning-validator invalido" *ngIf="fgv.foto.errors">
-                        <strong *ngIf="fgv.foto.errors.required">
-                            Foto requerida.
-                        </strong>
-                    </div>
-                </div>
-            </div>
-        </form> -->
 
         <form [formGroup]="fgValidator" class="bg-color col-sm-6 py-3">
             <input type="hidden" class="form-control" formControlName="imagenPublicacion" />
@@ -86,13 +69,22 @@
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="foto" class="text-2">Foto Publicacion(.jpg)*</label>
-                    <input formControlName="foto" type="string" class="form-control text-2" id="foto" placeholder="Foto"
-                        required="required">
-                        <div class="warning-validator invalido" *ngIf="fgv.foto.errors && (fgv.foto.dirty || fgv.foto.touched)">
-                            <strong *ngIf="fgv.foto.errors.required">
-                                Foto requerida.
-                            </strong>
+                    <div class="row">
+                        <form class="col-sm-2" [formGroup]="uploadForm">
+                            <label for="files" class="btn bt-azul">+</label>
+                            <input id="files" style="visibility:hidden;" formControlName="foto" (change)="onPublicacionPhoto($event)"
+                                name="foto" type="file" class="form-control text-2" />
+                        </form>
+                        <div class="form-group col-sm-10">
+                            <input formControlName="foto" type="string" class="form-control text-2" id="foto" placeholder="Foto"
+                                required="required">
+                            <div class="warning-validator invalido" *ngIf="fgv.foto.errors && (fgv.foto.dirty || fgv.foto.touched)">
+                                <strong *ngIf="fgv.foto.errors.required">
+                                    Foto requerida.
+                                </strong>
+                            </div>
                         </div>
+                    </div>
                 </div>
             </div>
 
